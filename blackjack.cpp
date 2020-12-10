@@ -31,8 +31,27 @@ int main (){
 			}	
 		}
 	}
-	for(int i=0;i<52;i++){
-		printf("%d\n", kartenspiel[i]);
-	}
+	//for(int i=0;i<52;i++){
+		//printf("%d\n", kartenspiel[i]);
+	//}
 
+int spielerkarte=0;
+int Spieler[12];
+for(int kartenzug=0; kartenzug<2; kartenzug++){
+	Spieler[spielerkarte] = kartenspiel[position];
+	kartenspiel[position]=0;
+	printf("Spielerkarten %d\n", Spieler[spielerkarte]);
+	position++;
+	spielerkarte++;
+	
+}
+int bankkarte=0;
+int Bank[12];
+for(int kartenzug=0; kartenzug<2; kartenzug++){
+	Bank[bankkarte]= kartenspiel[position];
+	kartenspiel[position]=0;
+	printf("Bankkarten %d\n ", Bank[bankkarte]);
+	position++;
+	bankkarte++;
+}
 }
