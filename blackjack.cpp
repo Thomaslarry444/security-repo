@@ -8,6 +8,8 @@ int main (){
 	srand (time(NULL));
 	int position;
 	int kartenspiel[52];
+	char eingabe;
+	int kartensumme=0;
 	for(int i=0;i<52;i++){
 		kartenspiel[i]=0;
 	}
@@ -53,5 +55,17 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	printf("Bankkarten %d\n ", Bank[bankkarte]);
 	position++;
 	bankkarte++;
+}
+printf("Wollen Sie noch eine Karte Spieler (y/n)\n");
+scanf("%c",&eingabe);
+if('y'==eingabe){
+	Spieler[spielerkarte]=kartenspiel[position];
+	//kartensumme=kartensumme+Spieler[spielerkarte];
+	for(int zaehlen=0; zaehlen<3; zaehlen++){
+		kartensumme+=Spieler[spielerkarte];
+	printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
+
+	}
+	
 }
 }
