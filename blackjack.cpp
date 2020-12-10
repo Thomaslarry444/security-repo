@@ -43,10 +43,11 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	Spieler[spielerkarte] = kartenspiel[position];
 	kartenspiel[position]=0;
 	printf("Spielerkarten %d\n", Spieler[spielerkarte]);
+		kartensumme=kartensumme+Spieler[spielerkarte];
+	printf("Momentane Kartenhoehe:  %d\n",kartensumme);
 	position++;
 	spielerkarte++;
-	kartensumme+=Spieler[spielerkarte];
-	printf("Momentane Kartenhoehe:  %d\n",kartensumme);
+;
 }
 	//for (int spielersumme=0; spielersumme<2;spielersumme++){
 		//kartensumme+=Spieler[spielerkarte];
