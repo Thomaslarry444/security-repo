@@ -45,8 +45,16 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	printf("Spielerkarten %d\n", Spieler[spielerkarte]);
 	position++;
 	spielerkarte++;
-	
+	kartensumme+=Spieler[spielerkarte];
+	printf("Momentane Kartenhoehe:  %d\n",kartensumme);
 }
+	//for (int spielersumme=0; spielersumme<2;spielersumme++){
+		//kartensumme+=Spieler[spielerkarte];
+		//printf("Momentane Kartenhoehe:  %i\n",kartensumme);
+//	}
+
+	
+
 int bankkarte=0;
 int Bank[12];
 for(int kartenzug=0; kartenzug<2; kartenzug++){
@@ -56,16 +64,17 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	position++;
 	bankkarte++;
 }
-printf("Wollen Sie noch eine Karte Spieler (y/n)\n");
-scanf("%c",&eingabe);
-if('y'==eingabe){
-	Spieler[spielerkarte]=kartenspiel[position];
+}
+//printf("Wollen Sie noch eine Karte Spieler (y/n)\n");
+//scanf("%c",&eingabe);
+//if('y'==eingabe){
+	//Spieler[spielerkarte]=kartenspiel[position];
 	//kartensumme=kartensumme+Spieler[spielerkarte];
-	for(int zaehlen=0; zaehlen<3; zaehlen++){
-		kartensumme+=Spieler[spielerkarte];
-	printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
+	//for(int zaehlen=0; zaehlen<3; zaehlen++){
+		//kartensumme+=Spieler[spielerkarte];
+	//printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
 
-	}
 	
-}
-}
+	
+
+
