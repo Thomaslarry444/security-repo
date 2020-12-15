@@ -49,10 +49,11 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	spielerkarte++;
 ;
 }
-	//for (int spielersumme=0; spielersumme<2;spielersumme++){
-		//kartensumme+=Spieler[spielerkarte];
+	for (int spielersumme=0; spielersumme<2;spielersumme++){
+		kartensumme+=Spieler[spielersumme];
 		//printf("Momentane Kartenhoehe:  %i\n",kartensumme);
 //	}
+	printf("Momentane Kartenhoehe:  %i\n",kartensumme);
 
 	
 
