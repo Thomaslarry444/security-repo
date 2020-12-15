@@ -3,6 +3,7 @@
 # include <time.h>
 # include <stdlib.h>
 
+int getKartensumme(int kartenanzahl, int* Karten);
 
 int main (){
 	srand (time(NULL));
@@ -10,6 +11,10 @@ int main (){
 	int kartenspiel[52];
 	char eingabe;
 	int kartensumme=0;
+	int spielerkarte=0;
+	int Spieler[12];
+	int bankkarte=0;
+	int Bank[12];
 	for(int i=0;i<52;i++){
 		kartenspiel[i]=0;
 	}
@@ -37,8 +42,7 @@ int main (){
 		//printf("%d\n", kartenspiel[i]);
 	//}
 
-int spielerkarte=0;
-int Spieler[12];
+
 for(int kartenzug=0; kartenzug<2; kartenzug++){
 	Spieler[spielerkarte] = kartenspiel[position];
 	kartenspiel[position]=0;
@@ -49,23 +53,22 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	spielerkarte++;
 ;
 }
-<<<<<<< Updated upstream
-	for (int spielersumme=0; spielersumme<2;spielersumme++){
-		kartensumme+=Spieler[spielersumme];
+	//for (int kartennummer=0; kartennummer<2;kartennummer++){
+		//kartensumme+=Spieler[kartennummer];
 		//printf("Momentane Kartenhoehe:  %i\n",kartensumme);
-//	}
+	//}
+	kartensumme=getKartensumme(spielerkarte,Spieler);
 	printf("Momentane Kartenhoehe:  %i\n",kartensumme);
-=======
-	for (int spielersumme=0; spielersumme<1;spielersumme++){
-		kartensumme+=Spieler[spielersumme];
-		printf("Momentane Kartenhoehe:  %i\n",kartensumme);
-	}
->>>>>>> Stashed changes
 
+	if(kartensumme==21){
+		printf("Sie haben gewonnen\n");
+	}
+	else if (kartensumme>21)
+	{
+		printf("Sie haben verloren\n");
+	}
 	
 
-int bankkarte=0;
-int Bank[12];
 for(int kartenzug=0; kartenzug<2; kartenzug++){
 	Bank[bankkarte]= kartenspiel[position];
 	kartenspiel[position]=0;
@@ -73,17 +76,28 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	position++;
 	bankkarte++;
 }
-}
-//printf("Wollen Sie noch eine Karte Spieler (y/n)\n");
-//scanf("%c",&eingabe);
-//if('y'==eingabe){
-	//Spieler[spielerkarte]=kartenspiel[position];
-	//kartensumme=kartensumme+Spieler[spielerkarte];
-	//for(int zaehlen=0; zaehlen<3; zaehlen++){
-		//kartensumme+=Spieler[spielerkarte];
-	//printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
+	kartensumme=getKartensumme(bankkarte,Bank);
+	printf("Momentane Kartenhoehe:  %i\n",kartensumme);
 
-	
-	
+	printf("Wollen Sie noch eine Karte Spieler (y/n)\n");
+	scanf("%c",&eingabe);
+	if('y'==eingabe){
+		Spieler[spielerkarte]=kartenspiel[position];
+		kartenspiel[position]=0;
+		position++;
+		spielerkarte++;
+		kartensumme=getKartensumme(spielerkarte,Spieler);
+		printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
+
+	}
+}
+}
+int getKartensumme(int kartenanzahl, int* Karten){
+	int kartensumme=0;
+	for (int kartennummer=0; kartennummer<kartenanzahl;kartennummer++){
+		kartensumme+=Karten[kartennummer];
+	}
+	return kartensumme;
+}
 
 
