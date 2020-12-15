@@ -60,14 +60,7 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	kartensumme=getKartensumme(spielerkarte,Spieler);
 	printf("Momentane Kartenhoehe:  %i\n",kartensumme);
 
-	if(kartensumme==21){
-		printf("Sie haben gewonnen\n");
-	}
-	else if (kartensumme>21)
-	{
-		printf("Sie haben verloren\n");
-	}
-	
+
 
 for(int kartenzug=0; kartenzug<2; kartenzug++){
 	Bank[bankkarte]= kartenspiel[position];
@@ -83,7 +76,7 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	scanf("%c",&eingabe);
 	if('y'==eingabe){
 		Spieler[spielerkarte]=kartenspiel[position];
-		kartenspiel[position]=0;
+		kartenspiel[position] = 0;
 		position++;
 		spielerkarte++;
 		kartensumme=getKartensumme(spielerkarte,Spieler);
@@ -91,12 +84,20 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 
 	}
 }
-}
+
 int getKartensumme(int kartenanzahl, int* Karten){
 	int kartensumme=0;
 	for (int kartennummer=0; kartennummer<kartenanzahl;kartennummer++){
 		kartensumme+=Karten[kartennummer];
 	}
+		if(kartensumme==21){
+		printf("Sie haben gewonnen\n");
+	}
+	else if (kartensumme>21)
+	{
+		printf("Sie haben verloren\n");
+	}
+	
 	return kartensumme;
 }
 
