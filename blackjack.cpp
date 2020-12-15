@@ -49,11 +49,18 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	spielerkarte++;
 ;
 }
+<<<<<<< Updated upstream
 	for (int spielersumme=0; spielersumme<2;spielersumme++){
 		kartensumme+=Spieler[spielersumme];
 		//printf("Momentane Kartenhoehe:  %i\n",kartensumme);
 //	}
 	printf("Momentane Kartenhoehe:  %i\n",kartensumme);
+=======
+	for (int spielersumme=0; spielersumme<1;spielersumme++){
+		kartensumme+=Spieler[spielersumme];
+		printf("Momentane Kartenhoehe:  %i\n",kartensumme);
+	}
+>>>>>>> Stashed changes
 
 	
 
