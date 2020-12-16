@@ -43,10 +43,11 @@ int main (){
 	//}
 
 
+printf("Spieler 1 ist am Zug.\n");
 for(int kartenzug=0; kartenzug<2; kartenzug++){
 	Spieler[spielerkarte] = kartenspiel[position];
 	kartenspiel[position]=0;
-	printf("Spielerkarten %d\n", Spieler[spielerkarte]);
+	printf("Der Spieler zieht die Karte %d\n", Spieler[spielerkarte]);
 		// kartensumme=kartensumme+Spieler[spielerkarte];
 	//printf("Momentane Kartenhoehe:  %d\n",kartensumme);
 	position++;
@@ -58,31 +59,38 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 		//printf("Momentane Kartenhoehe:  %i\n",kartensumme);
 	//}
 	kartensumme=getKartensumme(spielerkarte,Spieler);
-	printf("Momentane Kartenhoehe:  %i\n",kartensumme);
+	printf("Kartensumme Spieler:  %i\n\n",kartensumme);
 
 
 
 for(int kartenzug=0; kartenzug<2; kartenzug++){
 	Bank[bankkarte]= kartenspiel[position];
 	kartenspiel[position]=0;
-	printf("Bankkarten %d\n ", Bank[bankkarte]);
+	printf("Die Bank zieht die Karte %d\n", Bank[bankkarte]);
 	position++;
 	bankkarte++;
 }
 	kartensumme=getKartensumme(bankkarte,Bank);
-	printf("Momentane Kartenhoehe:  %i\n",kartensumme);
+	printf("Kartensumme Bank:  %i\n",kartensumme);
 
-	printf("Wollen Sie noch eine Karte Spieler (y/n)\n");
+	printf("Noch eine Karte Spieler? (y/n) ");
 	scanf("%c",&eingabe);
 	if('y'==eingabe){
 		Spieler[spielerkarte]=kartenspiel[position];
 		kartenspiel[position] = 0;
+		printf("\nDer Spieler zieht die Karte %d\n", Spieler[spielerkarte]);
 		position++;
 		spielerkarte++;
 		kartensumme=getKartensumme(spielerkarte,Spieler);
 		printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
 
 	}
+	else
+	{
+		printf("keine weiteren karten für den Spieler");
+		printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
+	}
+	
 }
 
 int getKartensumme(int kartenanzahl, int* Karten){
