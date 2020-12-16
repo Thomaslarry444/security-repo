@@ -87,7 +87,7 @@ for(int kartenzug=0; kartenzug<2; kartenzug++){
 	}
 	else
 	{
-		printf("keine weiteren karten für den Spieler");
+		printf("Keine weiteren karten für den Spieler");
 		printf("Die momentane Summe der Karten betraegt: %d\n",kartensumme);
 	}
 	
