@@ -57,24 +57,23 @@ int main()
 	kartensumme = getKartensumme(bankkarte, Bank);
 	printf("Kartensumme Bank:  %i\n", kartensumme);
 
-	printf("Noch eine Karte Spieler? (y/n) ");	// dieser Teil sollte in eine Schleife
-	scanf("%c", &eingabe);
-	if (eingabe == 'y')
-	{
-		Spieler[spielerkarte] = kartenspiel[position];
-		kartenspiel[position] = 0;
-		printf("\nDer Spieler zieht die Karte %d\n", Spieler[spielerkarte]);
-		position++;
-		spielerkarte++;
-		kartensumme = getKartensumme(spielerkarte, Spieler);
-		printf("Die momentane Summe der Karten betraegt: %d\n", kartensumme);
+	do{
+		printf("Noch eine Karte Spieler? (y/n) ");	// dieser Teil sollte in eine Schleife
+		scanf("%c", &eingabe);
+		if (eingabe == 'y')
+		{
+			getKartenzug(&position,&spielerkarte,kartenspiel,Spieler,1);
+			kartensumme = getKartensumme(spielerkarte, Spieler);
+			printf("Die momentane Summe der Karten betraegt: %d\n", kartensumme);
+		}
+		else
+		{
+			printf("Keine weiteren karten fuer den Spieler\n");
+			printf("Die momentane Summe der Karten betraegt: %d\n", kartensumme);
+		}
 	}
-	else
-	{
-		printf("Keine weiteren karten fuer den Spieler\n");
-		printf("Die momentane Summe der Karten betraegt: %d\n", kartensumme);
-	}
-}
+	while (eingabe == 'y');
+
 
 int getKartensumme(int kartenanzahl, int *Karten)
 {
