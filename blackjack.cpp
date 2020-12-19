@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 int getKartensumme(int kartenanzahl, int *Karten);
+void getKartenzug(int* position, int* spielerkarte,int* Kartenspiel, int* Spieler, int Kartenanzahl);
 
 int main()
 {
@@ -49,6 +50,8 @@ int main()
 	//}
 
 	printf("Spieler 1 ist am Zug.\n");
+	getKartenzug(&position,&spielerkarte,kartenspiel,Spieler,2);
+	/*
 	for (int kartenzug = 0; kartenzug < 2; kartenzug++) // Kartenzug könnte auch in eine funktion.
 	{
 		Spieler[spielerkarte] = kartenspiel[position];
@@ -57,10 +60,13 @@ int main()
 		position++;
 		spielerkarte++;
 	}
+	*/
 	kartensumme = getKartensumme(spielerkarte, Spieler);
 	printf("Kartensumme Spieler:  %i\n\n", kartensumme);
 
 	printf("Die Bank ist am Zug.\n");
+	getKartenzug(&position,&bankkarte,kartenspiel,Bank,2);
+	/*
 	for (int kartenzug = 0; kartenzug < 2; kartenzug++)
 	{
 		Bank[bankkarte] = kartenspiel[position];
@@ -69,6 +75,7 @@ int main()
 		position++;
 		bankkarte++;
 	}
+	*/
 	kartensumme = getKartensumme(bankkarte, Bank);
 	printf("Kartensumme Bank:  %i\n", kartensumme);
 
@@ -108,4 +115,15 @@ int getKartensumme(int kartenanzahl, int *Karten)
 	}
 
 	return kartensumme;
+}
+void getKartenzug(int* position, int* spielerkarte,int* Kartenspiel, int* Spieler,int Kartenanzahl)
+{
+	for (int kartenzug = 0; kartenzug < Kartenanzahl; kartenzug++) // Kartenzug könnte auch in eine funktion.
+	{
+		Spieler[*spielerkarte] = Kartenspiel[*position];
+		Kartenspiel[*position] = 0;
+		printf("Der Spieler zieht die Karte %d\n",Spieler[*spielerkarte]);
+		*position++;
+		*spielerkarte++;
+	}
 }
