@@ -45,37 +45,15 @@ int main()
 			}
 		}
 	}
-	//for(int i=0;i<52;i++){
-	//printf("%d\n", kartenspiel[i]);
-	//}
+	position=0;
 
 	printf("Spieler 1 ist am Zug.\n");
 	getKartenzug(&position,&spielerkarte,kartenspiel,Spieler,2);
-	/*
-	for (int kartenzug = 0; kartenzug < 2; kartenzug++) // Kartenzug könnte auch in eine funktion.
-	{
-		Spieler[spielerkarte] = kartenspiel[position];
-		kartenspiel[position] = 0;
-		printf("Der Spieler zieht die Karte %d\n", Spieler[spielerkarte]);
-		position++;
-		spielerkarte++;
-	}
-	*/
 	kartensumme = getKartensumme(spielerkarte, Spieler);
 	printf("Kartensumme Spieler:  %i\n\n", kartensumme);
 
 	printf("Die Bank ist am Zug.\n");
 	getKartenzug(&position,&bankkarte,kartenspiel,Bank,2);
-	/*
-	for (int kartenzug = 0; kartenzug < 2; kartenzug++)
-	{
-		Bank[bankkarte] = kartenspiel[position];
-		kartenspiel[position] = 0;
-		printf("Die Bank zieht die Karte %d\n", Bank[bankkarte]);
-		position++;
-		bankkarte++;
-	}
-	*/
 	kartensumme = getKartensumme(bankkarte, Bank);
 	printf("Kartensumme Bank:  %i\n", kartensumme);
 
@@ -123,7 +101,7 @@ void getKartenzug(int* position, int* spielerkarte,int* Kartenspiel, int* Spiele
 		Spieler[*spielerkarte] = Kartenspiel[*position];
 		Kartenspiel[*position] = 0;
 		printf("Der Spieler zieht die Karte %d\n",Spieler[*spielerkarte]);
-		*position++;
-		*spielerkarte++;
+		(*position)++;
+		(*spielerkarte)++;
 	}
 }
