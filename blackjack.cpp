@@ -75,7 +75,7 @@ int main()
 	while (eingabe == 'y');
 
 
-int getKartensumme(int kartenanzahl, int *Karten)
+int getKartensumme(int kartenanzahl, int *Karten) //toDo add Ass check.
 {
 	int kartensumme = 0;
 	for (int kartennummer = 0; kartennummer < kartenanzahl; kartennummer++)
