@@ -28,12 +28,15 @@ int main()
                 {
                     printf("Unsinnige Eingabe.");
                 }
-                
             }
         } while (lieferMenge < 0);
+
         Monatsertrag = Monatsertrag+lieferMenge*Pauschale;
+
         printf("Eingabe wiederholen ? (J/N)");
         scanf("%c",&wiederholen);
+
     } while (wiederholen == 'J');
+    
     printf("Der Monatsertrag beträgt: %f",Monatsertrag);
 }
