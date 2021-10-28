@@ -25,7 +25,7 @@ user=admin
 for device in `cat router_test_list.txt`; do
     ./config.exp $user $device $password $enable ;
     ./scp_trans.exp $user $device $password $image ;
-    checked=$(./verify.exp $user $device $password $image | grep check );
+    ./verify.exp $user $device $password $image ;
     echo "test0"
     echo $checked
     echo "test1"
