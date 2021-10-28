@@ -26,7 +26,7 @@ user=xcg6761
 for device in `cat router_test_list.txt`; do
     ./config.exp $user $device $password $enable ;
     ./scp_trans.exp $user $device $password $image ;
-    ./verify.exp $user $device $password $image ;
+    checked=$(./verify.exp $user $device $password $image | grep check );
     echo "test0"
     echo $checked
     echo "test1"
