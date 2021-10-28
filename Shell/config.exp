@@ -50,6 +50,11 @@ expect {
  expect "#"
  send "exit\n"
  expect ":~\$"
+<<<<<<< Updated upstream
  exit 
+=======
+ exit
+ send_user "test123"
+>>>>>>> Stashed changes
  
 

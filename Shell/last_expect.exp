@@ -15,7 +15,7 @@ set enablepwd [lindex $argv 3]
  send_user "\n"
  
 # Disable key check if needed
-# spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
+ spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
  
 # Enable SSH timeout notification
  expect {
@@ -50,6 +50,7 @@ send "conf t\n"
 expect "(config)#"
 send "no ip scp server enable \n"
 expect "(config)# "
+send ""
 send "end \n"
 expect "#"
 send "exit\n"

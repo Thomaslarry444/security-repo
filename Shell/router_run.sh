@@ -23,6 +23,7 @@ user=admin
 
 # Pull in device list and passwords
 for device in `cat router_test_list.txt`; do
+<<<<<<< Updated upstream
     test=(./config.exp $user $device $password $enable | grep Failed) ;
     echo "Test"
     echo $test
@@ -31,3 +32,10 @@ for device in `cat router_test_list.txt`; do
     #./verify.exp $user $device $password $enable $image ;
     #./last_expect.exp $user $device $password $enable $image ;
 done
+=======
+output=$(  ./config.exp $device $password $enable );
+output=  ./scp_trans.exp $device $password $enable ;
+echo "Test"
+echo $output
+ done
+>>>>>>> Stashed changes
