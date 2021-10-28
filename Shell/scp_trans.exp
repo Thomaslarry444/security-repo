@@ -3,8 +3,7 @@
 set username [lindex $argv 0]
 set hostname [lindex $argv 1]
 set password [lindex $argv 2]
-set enablepwd [lindex $argv 3]
-set image [lindex $argv 4]
+set image [lindex $argv 3]
 set timeout 300
 
 spawn scp   /tftp/$image $username\@$hostname:/$image
