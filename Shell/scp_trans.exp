@@ -6,6 +6,11 @@ set password [lindex $argv 2]
 set image [lindex $argv 3]
 set timeout 300
 
+# Output current device and time
+send_user "\n"
+send_user "/***  Copy file to $hostname @ [exec date] ***/\n"
+send_user "\n"
+
 spawn scp   /tftp/$image $username\@$hostname:/$image
 
 expect "*assword:"

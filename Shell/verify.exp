@@ -10,12 +10,11 @@ log_file -a ~/config.log
  
 # Output current device and time
 send_user "\n"
-send_user "/***  Working $hostname @ [exec date] ***/\n"
+send_user "/***  Verify file on $hostname @ [exec date] ***/\n"
 send_user "\n"
- 
-# Disable key check if needed
-# spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
- 
+
+spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
+
 # Enable SSH timeout notification
 expect {
     timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
@@ -26,18 +25,6 @@ expect {
     }
 }
  
-# Enter enable mode if not there
-expect {
-    default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
-    "*#" {}
-    "*>" {
-        send "enable\n"
-        expect "*assword"
-        send "$enablepwd\n"
-        expect "*#"
-    }
-}
-
 send "verify flash:$image"
 
 expect {

@@ -10,7 +10,7 @@ log_file -a ~/config.log
  
 # Output current device and time
 send_user "\n"
-send_user "/***  Working $hostname @ [exec date] ***/\n"
+send_user "/***  Enable SCP on $hostname @ [exec date] ***/\n"
 send_user "\n"
  
 # Disable key check if needed
