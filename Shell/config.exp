@@ -1,42 +1,42 @@
 #!/usr/bin/expect -f
 
- set hostname [lindex $argv 0]
- set username "xcg6761"
- set password [lindex $argv 1]
- set enablepwd [lindex $argv 2]
+set hostname [lindex $argv 0]
+set username "xcg6761"
+set password [lindex $argv 1]
+set enablepwd [lindex $argv 2]
 
 # Log config
- log_file -a ~/config.log
+log_file -a ~/config.log
  
 # Output current device and time
- send_user "\n"
- send_user "/***  Working $hostname @ [exec date] ***/\n"
- send_user "\n"
+send_user "\n"
+send_user "/***  Working $hostname @ [exec date] ***/\n"
+send_user "\n"
  
 # Disable key check if needed
- spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
+spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
  
 # Enable SSH timeout notification
- expect {
- timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
- eof { send_user "\nSSH Connection To $hostname Failed\n"; exit 1 }
- "*#" {}
- "*assword:" {
- send "$password\n"
- }
- }
+expect {
+    timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
+    eof { send_user "\nSSH Connection To $hostname Failed\n"; exit 1 }
+    "*#" {}
+    "*assword:" {
+        send "$password\n"
+    }
+}
  
 # Enter enable mode if not there
- expect {
- default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
- "*#" {}
- "*>" {
- send "enable\n"
- expect "*assword"
- send "$enablepwd\n"
- expect "*#"
- }
- }
+expect {
+    default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
+    "*#" {}
+    "*>" {
+        send "enable\n"
+        expect "*assword"
+        send "$enablepwd\n"
+        expect "*#"
+    }
+}
 
  
 # Enter config mode
@@ -50,6 +50,6 @@
  expect "#"
  send "exit\n"
  expect ":~\$"
- exit
+ exit 
  
 

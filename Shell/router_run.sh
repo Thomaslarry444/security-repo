@@ -19,7 +19,8 @@ cp $logfile $newlogfile
 
 # Pull in device list and passwords
 for device in `cat router_test_list.txt`; do
-output=  ./config.exp $device $password $enable ;
-output=  ./scp_trans.exp $device $password $enable ;
-echo $output
- done
+    ./config.exp $device $password $enable ;
+    ./scp_trans.exp $device $password $enable $image ;
+    ./verify.exp $device $password $enable $image ;
+    ./last_expect.exp $device $password $enable $image ;
+done
