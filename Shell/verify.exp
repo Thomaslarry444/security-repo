@@ -41,9 +41,6 @@ expect {
 send "verify flash:$image"
 
 expect {
-	"Digital signature successfully verified in file*" {
-	    send_user "Image check OK." 
-	}
+    default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
+	"Digital signature successfully verified in file*" { send_user "Image check OK."; exit 0 }
 }
-
-expect "#"
