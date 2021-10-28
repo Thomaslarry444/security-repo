@@ -4,7 +4,7 @@ set username [lindex $argv 0]
 set hostname [lindex $argv 1]
 set password [lindex $argv 2]
 set enablepwd [lindex $argv 3]
-set timeout 300
+set timeout 15
 
 # Log config
 log_file -a ~/config.log
@@ -22,7 +22,7 @@ expect {
     timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
     eof { send_user "\nSSH Connection To $hostname Failed\n"; exit 1 }
     "*#" {}
-    "*assword:" {
+    "*assword:*" {
         send "$password\n"
     }
 }
