@@ -7,7 +7,7 @@
  set image [lindex $argv 3] ]
  set timeout 300
 
-spawn scp   /tftp/$image< $username\@$hostname:/c800-universalk9-mz.SPA.158-3.M5.bin
+spawn scp   /tftp/$image $username\@$hostname:/$image
 
 expect "*assword:"
 send "$password\n"

@@ -9,6 +9,8 @@ logfile=config.log
 newlogfile=$logfile.$timestamp
 cp $logfile $newlogfile
 
+image= test.txt
+
 # Get SSH and enable passwords
  echo -n "Enter your SSH password "
  read -s -e password
@@ -19,8 +21,11 @@ cp $logfile $newlogfile
 
 # Pull in device list and passwords
 for device in `cat router_test_list.txt`; do
-    ./config.exp $device $password $enable ;
-    ./scp_trans.exp $device $password $enable $image ;
-    ./verify.exp $device $password $enable $image ;
-    ./last_expect.exp $device $password $enable $image ;
+    test = ./config.exp $device $password $enable ;
+    echo "Test"
+    echo $test
+    echo "Test2"
+    #./scp_trans.exp $device $password $enable $image ;
+    #./verify.exp $device $password $enable $image ;
+    #./last_expect.exp $device $password $enable $image ;
 done
