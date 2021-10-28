@@ -5,7 +5,8 @@
  set password [lindex $argv 1]
  set enablepwd [lindex $argv 2]
 
-# Log config
+
+ # Log config
  log_file -a ~/config.log
  
 # Output current device and time
@@ -14,7 +15,7 @@
  send_user "\n"
  
 # Disable key check if needed
- spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
+# spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
  
 # Enable SSH timeout notification
  expect {
@@ -37,19 +38,12 @@
  expect "*#"
  }
  }
+send "verify flash:c800-universalk9-mz.SPA.155-3.M5.bin"
+expect "#"
 
- 
-# Enter config mode
- send "conf t\n"
- expect "(config)#"
- 
-# Enter commands
- send "ip scp server enable \n"
- expect "(config)# "
- send "end \n"
- expect "#"
- send "exit\n"
- expect ":~\$"
- exit
- 
-
+expect {
+	"Digital signature successfully verified in file*" {
+				send_user "Image OK " 
+						}
+#Enter conft 
+send "
