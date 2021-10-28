@@ -24,8 +24,8 @@ user=admin
 # Pull in device list and passwords
 for device in `cat router_test_list.txt`; do
     ./config.exp $user $device $password $enable ;
-    ./scp_trans.exp $user $device $password $enable $image ;
-    CHECKED=$(./verify.exp $user $device $password $enable $image | grep check);
+    ./scp_trans.exp $user $device $password $image ;
+    CHECKED=$(./verify.exp $user $device $password $image | grep check);
     echo "test1"
     $CHECKED | grep OK
     echo "test2"
