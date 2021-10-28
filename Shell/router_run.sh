@@ -23,7 +23,7 @@ user=admin
 
 # Pull in device list and passwords
 for device in `cat router_test_list.txt`; do
-    ./config.exp $user $device $password $enable | grep Failed ;
+    test=(./config.exp $user $device $password $enable | grep Failed) ;
     echo "Test"
     echo $test
     echo "Test2"
