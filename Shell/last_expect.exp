@@ -46,4 +46,14 @@ expect {
 				send_user "Image OK " 
 						}
 #Enter conft 
-send "
+send "conf t\n"
+expect "(config)#"
+send "no ip scp server enable \n"
+expect "(config)# "
+send "end \n"
+expect "#"
+send "exit\n"
+expect ":~\$"
+exit
+
+
