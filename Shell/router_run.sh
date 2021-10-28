@@ -9,7 +9,7 @@ logfile=config.log
 newlogfile=$logfile.$timestamp
 cp $logfile $newlogfile
 
-image= test.txt
+image= "test.txt"
 
 # Get SSH and enable passwords
  echo -n "Enter your SSH password "
