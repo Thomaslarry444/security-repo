@@ -26,13 +26,23 @@ image=test.txt
 for device in `cat router_test_list.txt`; do
     ./config.exp $user $device $password $enable ;
     ./scp_trans.exp $user $device $password $image ;
-    checked=$(./verify.exp $user $device $password $image | grep check );
+    check=$(./verify.exp $user $device $password $image | grep check );
     echo "test0"
-    echo $checked
+    echo $check
     echo "test1"
-    echo $checked | grep OK
+    echo $check | grep OK
     echo "test2"
-    echo $checked | grep FAILED
+    echo $check | grep FAILED
     echo "test3"
-    #./last_expect.exp $user $device $password $enable $image ;
+
+    checked=$check | grep OK
+    if [ -z $check ]
+    then
+        echo "Image OK, continue."
+        #./last_expect.exp $user $device $password $enable $image ;
+    else
+        echo "Image verification failed!"
+        ## save hostname to file.
+    fi
+
 done
