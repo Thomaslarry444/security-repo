@@ -9,10 +9,10 @@ logfile=config.log
 newlogfile=$logfile.$timestamp
 cp $logfile $newlogfile
 
-#user=xcg6761
-#image=c800-universalk9-mz.SPA.158-3.M5.bin
-user=admin
-image=test.txt
+user=xcg6761
+image=c800-universalk9-mz.SPA.158-3.M5.bin
+#user=admin
+#image=test.txt
 
 # Get SSH and enable passwords
  echo -n "Enter your SSH password "
