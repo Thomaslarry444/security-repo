@@ -4,18 +4,18 @@ set username [lindex $argv 0]
 set hostname [lindex $argv 1]
 set password [lindex $argv 2]
 set image [lindex $argv 3]
+set timeout 30
 
 # Log config
 log_file -a ~/config.log
  
 # Output current device and time
 send_user "\n"
-send_user "/***  Working $hostname @ [exec date] ***/\n"
+send_user "/***  Verify file on $hostname @ [exec date] ***/\n"
 send_user "\n"
- 
-# Disable key check if needed
-# spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
- 
+
+spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
+
 # Enable SSH timeout notification
 expect {
     timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
@@ -26,21 +26,9 @@ expect {
     }
 }
  
-# Enter enable mode if not there
-expect {
-    default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
-    "*#" {}
-    "*>" {
-        send "enable\n"
-        expect "*assword"
-        send "$enablepwd\n"
-        expect "*#"
-    }
-}
-
 send "verify flash:$image"
 
 expect {
-    default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
+    default { send_user "Image check FAILED."; exit 1 }
 	"Digital signature successfully verified in file*" { send_user "Image check OK."; exit 0 }
 }

@@ -4,13 +4,14 @@ set username [lindex $argv 0]
 set hostname [lindex $argv 1]
 set password [lindex $argv 2]
 set enablepwd [lindex $argv 3]
+set timeout 15
 
 # Log config
 log_file -a ~/config.log
  
 # Output current device and time
 send_user "\n"
-send_user "/***  Working $hostname @ [exec date] ***/\n"
+send_user "/***  Enable SCP on $hostname @ [exec date] ***/\n"
 send_user "\n"
  
 # Disable key check if needed
@@ -21,29 +22,36 @@ expect {
     timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
     eof { send_user "\nSSH Connection To $hostname Failed\n"; exit 1 }
     "*#" {}
-    "*assword:" {
+    "*assword:*" {
         send "$password\n"
     }
 }
+
  
 # Enter enable mode if not there
 expect {
     default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
-    "*#" {}
+    "*#" { send_user "\nEntered Enable Mode\n"; }
     "*>" {
         send "enable\n"
         expect "*assword"
         send "$enablepwd\n"
         expect "*#"
     }
+    #"*assword:*" { 
+        #send "$password\n" 
+        #send_user "\nPassword for $hostname incorrect.\n"
+        #exit 1 
+    #}
 }
 
  
 # Enter config mode
- send "conf t\n"
- expect "(config)#"
+send "conf t\n"
+expect "(config)#"
  
 # Enter commands
+<<<<<<< HEAD
  send "ip scp server enable \n"
  expect "(config)# "
  send "end \n"
@@ -56,5 +64,14 @@ expect {
  exit
  send_user "test123"
 >>>>>>> Stashed changes
+=======
+send "ip scp server enable \n"
+expect "(config)# "
+send "end \n"
+expect "#"
+send "exit\n"
+expect ":~\$"
+exit 0
+>>>>>>> 68faf6304d4873c27b70555864e7ad239d8a6255
  
 
