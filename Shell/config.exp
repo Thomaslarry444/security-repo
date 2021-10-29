@@ -26,10 +26,12 @@ expect {
         send "$password\n"
     }
 }
+
  
 # Enter enable mode if not there
 expect {
     default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
+    "*assword:*" { send_user "\nPassword for $hostname incorrect.\n"; exit 1 }
     "*#" {}
     "*>" {
         send "enable\n"
@@ -41,16 +43,16 @@ expect {
 
  
 # Enter config mode
- send "conf t\n"
- expect "(config)#"
+send "conf t\n"
+expect "(config)#"
  
 # Enter commands
- send "ip scp server enable \n"
- expect "(config)# "
- send "end \n"
- expect "#"
- send "exit\n"
- expect ":~\$"
- exit 
+send "ip scp server enable \n"
+expect "(config)# "
+send "end \n"
+expect "#"
+send "exit\n"
+expect ":~\$"
+exit 0
  
 
