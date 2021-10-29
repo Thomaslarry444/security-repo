@@ -38,11 +38,11 @@ expect {
         send "$enablepwd\n"
         expect "*#"
     }
-    "*assword:*" { 
-        send "$password\n" 
+    #"*assword:*" { 
+        #send "$password\n" 
         #send_user "\nPassword for $hostname incorrect.\n"
         #exit 1 
-    }
+    #}
 }
 
  
