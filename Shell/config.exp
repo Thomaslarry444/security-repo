@@ -31,14 +31,14 @@ expect {
 # Enter enable mode if not there
 expect {
     default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
-    "*assword:*" { send_user "\nPassword for $hostname incorrect.\n"; exit 1 }
-    "*#" {}
+    "*#" { send_user "\nEntered Enable Mode\n"; }
     "*>" {
         send "enable\n"
         expect "*assword"
         send "$enablepwd\n"
         expect "*#"
     }
+    #"*assword:*" { send_user "\nPassword for $hostname incorrect.\n"; exit 1 }
 }
 
  
