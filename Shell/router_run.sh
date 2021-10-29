@@ -36,7 +36,8 @@ for device in `cat router_test_list.txt`; do
     echo "test3"
 
     checked=$check | grep OK
-    if [ -z $check ]
+    echo $checked
+    if [ -z $checked ]
     then
         echo "Image OK, continue."
         #./last_expect.exp $user $device $password $enable $image ;
