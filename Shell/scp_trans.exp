@@ -11,10 +11,16 @@ send_user "\n"
 send_user "/***  Copy file to $hostname @ [exec date] ***/\n"
 send_user "\n"
 
-spawn scp   /tftp/$image $username\@$hostname:/$image
+spawn scp /tftp/$image $username\@$hostname:/$image
 
 expect "*assword:"
 send "$password\n"
+
+expect {
+    eof { send_user "\nSSH Connection To $hostname Failed\n"; exit 1 }
+    "*assword: " { send_user "\nSSH password for $username@$hostname Failed\n"; exit 1 }
+}
+
 expect "*\r"
 expect "\r"
 expect eof
