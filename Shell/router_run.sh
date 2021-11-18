@@ -9,8 +9,8 @@ logfile=config.log
 newlogfile=$logfile.$timestamp
 cp $logfile $newlogfile
 
-user=xcg6761
-image=c800-universalk9-mz.SPA.158-3.M5.bin
+#user=xcg6761
+#image=c800-universalk9-mz.SPA.158-3.M5.bin
 #user=admin
 #image=test.txt
 
@@ -27,6 +27,7 @@ for device in `cat router_test_list.txt`; do
     ./config.exp $user $device $password $enablepwd ;
     ./scp_trans.exp $user $device $password $image ;
     check=$(./verify.exp $user $device $password $image | grep check );
+    ./last_expect $user $device $password ;
     echo "test0"
     echo $check
     echo "test1"

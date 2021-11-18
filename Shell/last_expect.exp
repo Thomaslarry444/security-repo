@@ -39,23 +39,21 @@ set timeout 300
  expect "*#"
  }
  }
-send "verify flash:c800-universalk9-mz.SPA.155-3.M5.bin"
-expect "#"
 
-expect {
-	"Digital signature successfully verified in file*" {
-				send_user "Image OK " 
-						}
 #Enter conft 
 send "conf t\n"
 expect "(config)#"
 send "no ip scp server enable \n"
 expect "(config)# "
-send ""
+send "boot system flash:c800-universalk9-mz.SPA.155-3.M5.bin"
+expect "(config)"
+send "no boot system flash:c800-universalk9-mz.SPA.155-3.M5.bin"
+expect "(config)"
 send "end \n"
+expect "#"
+send "write mem\n"
 expect "#"
 send "exit\n"
 expect ":~\$"
 exit
-
 
