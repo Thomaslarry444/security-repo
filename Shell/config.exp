@@ -41,22 +41,7 @@ expect "*#"
 # Enter config mode
 send "conf t\n"
 expect "(config)#"
- 
-# Enter commands
-<<<<<<< HEAD
- send "ip scp server enable \n"
- expect "(config)# "
- send "end \n"
- expect "#"
- send "exit\n"
- expect ":~\$"
-<<<<<<< Updated upstream
- exit 
-=======
- exit
- send_user "test123"
->>>>>>> Stashed changes
-=======
+
 send "ip scp server enable \n"
 expect "(config)# "
 send "end \n"
@@ -64,6 +49,3 @@ expect "#"
 send "exit\n"
 expect ":~\$"
 exit 0
->>>>>>> 68faf6304d4873c27b70555864e7ad239d8a6255
- 
-
