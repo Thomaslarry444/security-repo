@@ -120,8 +120,8 @@ for i, row in df1.iterrows():
         print('next')
         devices.append(d)
 
-result=next(i for i in devices if i ["Modell"]=="Cisco Catalyst 9500 Switch")
-print(result)
+Source_list_=next(i for i in devices if i ["Modell"]=="Cisco Catalyst 9500 Switch")
+print(Source_list_)
         
 
 quit() 
