@@ -1,0 +1,35 @@
+no ip access-list extended Management
+ip access-list extended Management
+ permit ip 10.253.0.0 0.0.255.255 any
+ permit udp 10.1.80.0 0.0.0.31 any
+ permit udp 10.1.144.0 0.0.0.31 any
+ permit udp 10.67.0.226 0.0.0.1 any
+ permit ip 10.55.9.164 0.0.0.1 any
+ permit ip 10.64.51.128 0.0.0.127 any
+ permit ip 10.64.52.128 0.0.0.127 any
+ permit ip host 10.65.106.236 any
+ permit ip host 10.65.106.241 any
+ permit ip host 10.65.106.244 any
+ permit ip host 10.65.106.246 any
+ permit ip 192.168.117.128 0.0.0.127 any
+ permit ip 192.168.118.128 0.0.0.127 any
+ permit ip host 10.67.0.7 any
+ permit ip host 10.67.3.200 any
+ deny ip any any
+!
+logging buffered 1024
+!
+banner login q
+********************************************************
+ 
+This system is private property of ATRUVIA AG
+ 
+Any unauthorized access is strictly prohibited
+and will be prosecuted to the full extent of
+applicable local and international law822.
+ 
+ 
+********************************************************
+q
+!
+wr

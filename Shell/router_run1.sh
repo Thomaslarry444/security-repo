@@ -19,5 +19,5 @@ cp $logfile $newlogfile
 
 # Pull in device list and passwords
 for device in `cat router_test_list.txt`; do
- ./scp_trans.exp $device $password $enable ;
+ ./acl_5592.exp $device $password $enable ;
  done

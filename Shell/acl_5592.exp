@@ -1,0 +1,76 @@
+#!/usr/bin/expect -f
+ 
+# Variables
+set hostname [lindex $argv 0]
+set username xcg6761
+set password [lindex $argv 1]
+set enablepwd [lindex $argv 2]
+
+# Log config
+log_file -a ~/config.log
+
+# Output current device and time
+send_user "\n"
+send_user "/***  Working $hostname @ [exec date] ***/\n"
+send_user "\n"
+
+# Disable key check if needed
+ spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
+
+# Enable SSH timeout notification
+expect {
+timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
+eof { send_user "\nSSH Connection To $hostname Failed\n"; exit 1 }
+"*#" {}
+"*assword:" {
+send "$password\n"
+}
+}
+
+# Enter enable mode if not there
+expect {
+default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
+"*#" {}
+"*>" {
+send "enable\n"
+expect "*assword"
+send "$enablepwd\n"
+expect "*#"
+}
+}
+# Enter config mode
+send "conf t\n"
+expect "(config)#"
+
+send "ip access-list extended Management
+permit ip 10.253.220.0 0.0.3.255 any 
+permit tcp 10.253.192.0 0.0.1.255 any eq 22
+permit tcp 10.253.63.0 0.0.0.255 any eq 22
+permit tcp 10.253.7.32 0.0.0.15 any eq 22
+permit tcp 10.55.9.164 0.0.0.1 any eq 22
+permit tcp 10.59.128.0 0.0.127.255 any 
+permit tcp 10.57.128.0 0.0.127.255 any 
+permit tcp 10.51.128.0 0.0.127.255 any
+permit tcp 10.178.128.0 0.0.127.255 any
+deny ip any any
+
+line vty 0 4
+no access-class 10 in
+access-class Management in
+transport input telnet ssh
+
+line vty 5 15
+no access-class 10 in
+access-class Management in
+transport input telnet ssh
+
+no access-list 10
+"
+expect "(config)# "
+send "end \n"
+expect "#"
+send "write mem\n"
+expect "#"
+send "exit\n"
+expect ":~\$"
+exit 0
