@@ -120,8 +120,10 @@ for i, row in df1.iterrows():
         print('next')
         devices.append(d)
 
-Source_list_=next(i for i in devices if i ["Modell"]=="Cisco Catalyst 9500 Switch")
-print(Source_list_)
+if (i for i in devices if i ["Modell"]=="Cisco Catalyst 9500 Switch" or ['Model']=='Cisco Catalyst 9300L Switch'):
+        SOURCCE_FILE=(r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+
+
         
 
 quit() 
