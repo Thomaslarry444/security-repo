@@ -155,13 +155,13 @@ for ip in (devices):
                           'Host':devices[1] ,
                          'username':USERNAME,
                          'password':password,
-                         'port':22,
-                         'verbose':T
-       
+                         'port':22
+                         #'verbose':T
+        }
         #if vendor=='cisco':
                          #print('hello test 3')
-        Future=pool.submit(targert=upload_nemiko, args=(netdevice,))
-        Future_List_cisco.append(Future_List_cisco)
+        Future=pool.submit(upload_nemiko, netdevice)
+        Future_List_cisco.append(Future)
                 
         #elif vendor=='hp':
                         #  Future = pool.submit(target=upload_nemiko, args=(device,))
