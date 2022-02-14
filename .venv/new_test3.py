@@ -52,37 +52,31 @@ def hpconfig(device):
         connection_hp.disconnect()
 
 # --- Upload Netmiko function
-def upload_nemiko(device):
-    print("Upload on:", device)
+def upload_nemiko(netdevice):
+    print("Upload on:", netdevice)
         # Create the Netmiko SSH connection
     try:
-        ssh_conn = ConnectHandler(**device)
+        ssh_conn = ConnectHandler(**netdevice)
         transfer_dict = {}
         transfer_dict = file_transfer(ssh_conn,
                             source_file=SOURCE_FILE,
                             dest_file=SOURCE_FILE,
                             )
         print(80*"=")
-        print('Results for', device+':')
+        print('Results for', netdevice+':')
         print('File exists already: ',transfer_dict['file_exists'])
         print('File transferred: ',transfer_dict['file_transferred'])
         print('MD5 verified :',transfer_dict['file_verified'])
     except NetMikoTimeoutException:
         print(80*"=")
-        print('Results for', device+':')
+        print('Results for', netdevice+':')
         print('Skipped: SSH Timed out')
         #continue
     except (AuthenticationException, NetMikoAuthenticationException):
         print(80*"=")
-        print('Results for', device+':')
+        print('Results for', netdevice+':')
         print('Skipped: Authentication failed')
         #continue
-# --- Check file exists function
-def is_valid_file(parser, arg):
-    if not os.path.exists(arg):
-        parser.error("The file %s does not exist!" % arg)
-    else:
-        return(arg)
 
 
  # --- Confirmation function
@@ -162,11 +156,11 @@ for ip in (devices):
                          'username':USERNAME,
                          'password':password,
                          'port':22,
-                         'verbose':True}
+                         'verbose':T
        
         #if vendor=='cisco':
                          #print('hello test 3')
-        Future=pool.submit(target=upload_nemiko, args=(netdevice,))
+        Future=pool.submit(targert=upload_nemiko, args=(netdevice,))
         Future_List_cisco.append(Future_List_cisco)
                 
         #elif vendor=='hp':
