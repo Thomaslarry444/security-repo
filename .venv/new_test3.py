@@ -32,7 +32,7 @@ USERNAME='xcg6761'
 password=getpass.getpass('Passwort:')
 netdevice=[]
 vendor_list=['cisco','hp']
-MAX_THREADS = 10
+MAX_THREADS = 1
 
 def ciscoconfig(device):
         #net_connect=ConnectHandler(device_type=platform, ip=devices_ips_list [i], username=username, password=password)
@@ -53,8 +53,9 @@ def hpconfig(device):
 
 # --- Upload Netmiko function
 def upload_nemiko(netdevice):
+    print ("starte thread")
     print("Upload on:", netdevice)
-        # Create the Netmiko SSH connection
+    '''# Create the Netmiko SSH connection
     try:
         ssh_conn = ConnectHandler(**netdevice)
         transfer_dict = {}
@@ -76,7 +77,7 @@ def upload_nemiko(netdevice):
         print(80*"=")
         print('Results for', netdevice+':')
         print('Skipped: Authentication failed')
-        #continue
+        #continue'''
 
 
  # --- Confirmation function
@@ -101,34 +102,8 @@ def confirm(prompt=None, resp=False):
              return True
          if ans == 'n' or ans == 'N':
              return False
-
-# #--- Init argparse
-# parser = ArgumentParser()
-# parser.add_argument("filename", help="The file to upload", metavar='FILE', type=lambda x: is_valid_file(parser, x))
-# args = parser.parse_args()
-
-df1= pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';' , dtype=str,  usecols=['Hostname','IP-Adresse','Modell','Seriennr'])
-# Generate a list of dictionary-items, one item per line with additional keywords
-for i, row in df1.iterrows():
-        d=row.to_dict()
-        print(d)
-        print('next')
-        devices.append(d)
-
-if (i for i in devices if i ["Modell"]=="Cisco Catalyst 9500 Switch" or ['Model']=='Cisco Catalyst 9300L Switch'):
-        SOURCE_FILE=(r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
-elif(i for i in devices if i ["Model"]=="Cisco Catalyst 9200L Switch"):
-        SOURCE_FILE=(r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
-elif (i for i in devices if i ["Model"]=="Cisco Catalyst 9200L Switch"):
-        
-        
-        
-
-
-
-
-
- ## --- Ask confirmation
+def main()
+     ## --- Ask confirmation
  print(80*"=")
  print('Please, confirm the upload of',SOURCE_FILE+' on: ')
  print(*devices_ips_list, sep ='\n')
@@ -152,7 +127,7 @@ Future_List_cisco= []
 #Future_List_hp=[]
 for ip in (devices):
         netdevice= {'device_type':platform_cisco,
-                          'Host':devices[1] ,
+                        'Host':ip['IP-Adresse'] ,
                          'username':USERNAME,
                          'password':password,
                          'port':22
@@ -163,16 +138,32 @@ for ip in (devices):
         Future=pool.submit(upload_nemiko, netdevice)
         Future_List_cisco.append(Future)
                 
-        #elif vendor=='hp':
-                        #  Future = pool.submit(target=upload_nemiko, args=(device,))
-                        #  Future_List_hp(Future_List_hp)###threads liste beachten 
+# #--- Init argparse
+# parser = ArgumentParser()
+# parser.add_argument("filename", help="The file to upload", metavar='FILE', type=lambda x: is_valid_file(parser, x))
+# args = parser.parse_args()
+
+df1= pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';' , dtype=str,  usecols=['Hostname','IP-Adresse','Modell','Seriennr'])
+# Generate a list of dictionary-items, one item per line with additional keywords
+for i, row in df1.iterrows():
+        d=row.to_dict()
+        print(d)
+        print('next')
+        devices.append(d)
+
+if (i for i in devices if i ["Modell"]=="Cisco Catalyst 9500 Switch" or ['Model']=='Cisco Catalyst 9300L Switch'):
+        SOURCE_FILE=(r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+elif(i for i in devices if i ["Model"]=="Cisco Catalyst 9200L Switch"):
+        SOURCE_FILE=(r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+elif (i for i in devices if i ["Model"]=="Cisco Catalyst 9200L Switch"):
         
-                        #  if vendor=='cisco':
-        wait(Future_List_cisco)
-            
-                        #  if vendor=='hp':
-                        #          wait(Future_List_hp)
-                
+        
+if __name__ =='__main__':
+    main()
+
+
+
+
         
 #         ##Alles gemacht 
         #         print(80*"=")
