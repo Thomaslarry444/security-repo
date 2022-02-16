@@ -6,54 +6,59 @@ import pandas as pd
 from netmiko import ConnectHandler
 from argparse import ArgumentParser
 from pandas.core.frame import DataFrame
-import getpass 
-import os.path 
+import getpass
+import os.path
 from netmiko import ConnectHandler, file_transfer
 from netmiko.ssh_exception import NetMikoAuthenticationException, NetMikoTimeoutException
 from paramiko.ssh_exception import AuthenticationException
-import time 
+import time
 from concurrent.futures import ProcessPoolExecutor, wait
 
 print('hello test')
-StartTime=time.time
-hp_devices=DataFrame()
-hp_devices_ip=DataFrame()
-hp_devices_ip_frame=DataFrame()
-hp_devices_ip_list=[]
-df1=DataFrame()
-devices=[]
-cisco_devices=DataFrame()
-devices_ips_Model=DataFrame()
-devices_ips_list=[]
-cisco_devices_ips_list=()
-platform_cisco='cisco_ios'
-platform_hp='hp_procurve'
-USERNAME='xcg6761'
-password=getpass.getpass('Passwort:')
-netdevice=[]
-vendor_list=['cisco','hp']
+StartTime = time.time
+hp_devices = DataFrame()
+hp_devices_ip = DataFrame()
+hp_devices_ip_frame = DataFrame()
+hp_devices_ip_list = []
+df1 = DataFrame()
+devices = []
+cisco_devices = DataFrame()
+devices_ips_Model = DataFrame()
+devices_ips_list = []
+cisco_devices_ips_list = ()
+platform_cisco = 'cisco_ios'
+platform_hp = 'hp_procurve'
+USERNAME = 'xcg6761'
+password = getpass.getpass('Passwort:')
+netdevice = []
+vendor_list = ['cisco', 'hp']
 MAX_THREADS = 1
 
+
 def ciscoconfig(device):
-        #net_connect=ConnectHandler(device_type=platform, ip=devices_ips_list [i], username=username, password=password)
-        print('functions aufruf')
-        connection=ConnectHandler(**device)
-        with open('cisco_config.txt') as CONFIG_LINES:
-                CONFIG=CONFIG_LINES.read()
-        output=connection.send_config_set(CONFIG)
-        print(output)
-        connection.disconnect()
+    #net_connect=ConnectHandler(device_type=platform, ip=devices_ips_list [i], username=username, password=password)
+    print('functions aufruf')
+    connection = ConnectHandler(**device)
+    with open('cisco_config.txt') as CONFIG_LINES:
+        CONFIG = CONFIG_LINES.read()
+    output = connection.send_config_set(CONFIG)
+    print(output)
+    connection.disconnect()
+
+
 def hpconfig(device):
-        connection_hp=ConnectHandler(**device)
-        with open('hp_config.txt') as CONFIG_LINES:
-                CONFIG=CONFIG_LINES.read()
-        output=connection_hp.send_config_set(CONFIG)
-        print(output)
-        connection_hp.disconnect()
+    connection_hp = ConnectHandler(**device)
+    with open('hp_config.txt') as CONFIG_LINES:
+        CONFIG = CONFIG_LINES.read()
+    output = connection_hp.send_config_set(CONFIG)
+    print(output)
+    connection_hp.disconnect()
 
 # --- Upload Netmiko function
+
+
 def upload_nemiko(netdevice):
-    print ("starte thread")
+    print("starte thread")
     print("Upload on:", netdevice)
     '''# Create the Netmiko SSH connection
     try:
@@ -79,96 +84,99 @@ def upload_nemiko(netdevice):
         print('Skipped: Authentication failed')
         #continue'''
 
-
  # --- Confirmation function
+
+
 def confirm(prompt=None, resp=False):
 
-     if prompt is None:
-         prompt = 'Confirm'
+    if prompt is None:
+        prompt = 'Confirm'
 
-     if resp:
-         prompt = '%s [%s]|%s: ' % (prompt, 'y', 'n')
-     else:
-         prompt = '%s [%s]|%s: ' % (prompt, 'n', 'y')
+    if resp:
+        prompt = '%s [%s]|%s: ' % (prompt, 'y', 'n')
+    else:
+        prompt = '%s [%s]|%s: ' % (prompt, 'n', 'y')
 
-     while True:
-         ans = input(prompt)
-         if not ans:
-             return resp
-         if ans not in ['y', 'Y', 'n', 'N']:
-             print ('please enter y or n.')
-             continue
-         if ans == 'y' or ans == 'Y':
-             return True
-         if ans == 'n' or ans == 'N':
-             return False
+    while True:
+        ans = input(prompt)
+        if not ans:
+            return resp
+        if ans not in ['y', 'Y', 'n', 'N']:
+            print('please enter y or n.')
+            continue
+        if ans == 'y' or ans == 'Y':
+            return True
+        if ans == 'n' or ans == 'N':
+            return False
+
+
 def main():
-## --- Ask confirmation
- print(80*"=")
- print('Please, confirm the upload of',SOURCE_FILE+' on: ')
- print(*devices_ips_list, sep ='\n')
- prompt = str("Proceed?")
+    # --- Ask confirmation
+    print(80*"=")
+    print('Please, confirm the upload of', SOURCE_FILE+' on: ')
+    print(*devices_ips_list, sep='\n')
+    prompt = str("Proceed?")
 
-#  if confirm(prompt=prompt, resp=False) == True:
-#          # --- Get credentials
-#          print(80*"-")
-#          USERNAME = input('Please insert your username: ')
-#          print("And your password")
-#          PASSWORD = password
-#          print(80*"-")
+    if confirm(prompt=prompt, resp=False) == True:
+        # --- Get credentials
+        print(80*"-")
+        USERNAME = input('Please insert your username: ')
+        print("And your password")
+        PASSWORD = getpass()
+        print(80*"-")
 
- # --- Get the time for timing
-# start_time = time()
 
-     # --- Set the number of threads
+    # --- Set the number of threads
 pool = ProcessPoolExecutor(MAX_THREADS)
-        
-Future_List_cisco= []
-#Future_List_hp=[]
+
+Future_List_cisco = []
+# Future_List_hp=[]
 for ip in (devices):
-        netdevice= {'device_type':platform_cisco,
-                        'Host':ip['IP-Adresse'] ,
-                         'username':USERNAME,
-                         'password':password,
-                         'port':22
-                         #'verbose':T
-        }
-        #if vendor=='cisco':
-                         #print('hello test 3')
-        Future=pool.submit(upload_nemiko, netdevice)
-        Future_List_cisco.append(Future)
-                
+
+    if ip['Seriennr'].str.startswith('F'):
+        netdevice = {'device_type': platform_cisco,
+                    'Host': ip['IP-Adresse'],
+                    'username': USERNAME,
+                    'password': password,
+                    'port': 22
+                    # 'verbose':T
+                    }
+    # if vendor=='cisco':
+    #print('hello test 3')
+    Future = pool.submit(upload_nemiko, netdevice)
+    Future_List_cisco.append(Future)
+
 # #--- Init argparse
 # parser = ArgumentParser()
 # parser.add_argument("filename", help="The file to upload", metavar='FILE', type=lambda x: is_valid_file(parser, x))
 # args = parser.parse_args()
 
-df1= pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';' , dtype=str,  usecols=['Hostname','IP-Adresse','Modell','Seriennr'])
+df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',
+                  dtype=str,  usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
 # Generate a list of dictionary-items, one item per line with additional keywords
 for i, row in df1.iterrows():
-        d=row.to_dict()
-        print(d)
-        print('next')
-        devices.append(d)
+    d = row.to_dict()
+    print(d)
+    print('next')
+    devices.append(d)
 
-if (i for i in devices if i ["Modell"]=="Cisco Catalyst 9500 Switch" or ['Model']=='Cisco Catalyst 9300L Switch'):
-        SOURCE_FILE=(r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
-elif(i for i in devices if i ["Model"]=="Cisco Catalyst 9200L Switch"):
-        SOURCE_FILE=(r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
-elif (i for i in devices if i ["Model"]=="Cisco Catalyst 9200L Switch"):
-        SOURCE_FILE=''
-        
-        
-if (__name__ =='__main__'):
+if (i for i in devices if i["Modell"] == "Cisco Catalyst 9500 Switch" or ['Model'] == 'Cisco Catalyst 9300L Switch'):
+    SOURCE_FILE = (
+        r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+elif(i for i in devices if i["Model"] == "Cisco Catalyst 9200L Switch"):
+    SOURCE_FILE = (
+        r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+elif (i for i in devices if i["Model"] == "Cisco Catalyst 9200L Switch"):
+    SOURCE_FILE = ''
+
+
+if (__name__ == '__main__'):
     main()
 
 
-
-
-        
-#         ##Alles gemacht 
-        #         print(80*"=")
-        #         print("Uploads done in {} seconds".format(time() - start_time))
-        #         print(80*"=")
-        # else:
-        #  print("Failed")       cd 
+#         ##Alles gemacht
+    #         print(80*"=")
+    #         print("Uploads done in {} seconds".format(time() - start_time))
+    #         print(80*"=")
+    # else:
+    #  print("Failed")       cd
