@@ -118,22 +118,9 @@ def main():
                         'username': USERNAME,
                         'password': password,
                         'port': 22
-                        # 'verbose':T
-                        }
-        # if vendor=='cisco':
-        #print('hello test 3')
-        Future = pool.submit(upload_nemiko, netdevice)
-        Future_List_cisco.append(Future)
-
-    # #--- Init argparse
-    # parser = ArgumentParser()
-    # parser.add_argument("filename", help="The file to upload", metavar='FILE', type=lambda x: is_valid_file(parser, x))
-    # args = parser.parse_args()
-
-
-
-
-
+                        }             
+            Future = pool.submit(upload_nemiko, netdevice)
+            Future_List_cisco.append(Future)
 
 
 if (__name__ == '__main__'):
