@@ -106,7 +106,7 @@ def main():
         if ip['Seriennr'].startswith('F'):
             if (ip["Modell"] == "Cisco Catalyst 9500 Switch"):
                 source_file = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
-            elif (ip['Model'] == 'Cisco Catalyst 9300L Switch'):
+            elif (ip['Model'] == "Cisco Catalyst 9300L Switch"):
                 source_file = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
             elif (ip["Model"] == "Cisco Catalyst 9200L Switch"):
                 source_file = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
