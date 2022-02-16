@@ -88,8 +88,8 @@ def upload_nemiko(netdevice):
 
 
 def main():
-    df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',
-                    dtype=str,  usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
+    df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',dtype=str, usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
+    
     # Generate a list of dictionary-items, one item per line with additional keywords
     for i, row in df1.iterrows():
         d = row.to_dict()
