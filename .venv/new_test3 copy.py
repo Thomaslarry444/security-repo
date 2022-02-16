@@ -68,7 +68,7 @@ def hpconfig(device):
 def upload_nemiko(netdevice):
     print("starte thread")
     print("Upload on:", netdevice)
-    '''# Create the Netmiko SSH connection
+    # Create the Netmiko SSH connection
     try:
         ssh_conn = ConnectHandler(**netdevice)
         transfer_dict = {}
@@ -111,8 +111,7 @@ def main():
             elif (ip["Modell"] == "Cisco Catalyst 9200L Switch"):
                 source_file = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
             elif (ip["Modell"] == "Cisco Catalyst 9200L Switch"):
-                source_file = ''
-            
+                source_file = ''           
             netdevice = {'device_type': platform_cisco,
                         'Host': ip['IP-Adresse'],
                         'username': USERNAME,
@@ -120,8 +119,8 @@ def main():
                         'port': 22,
                         'sourceFile':source_file
                         }             
-        Future = pool.submit(upload_nemiko, netdevice)
-        Future_List_cisco.append(Future)
+            Future = pool.submit(upload_nemiko, netdevice)
+            Future_List_cisco.append(Future)
 
 
 if (__name__ == '__main__'):
