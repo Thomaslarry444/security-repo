@@ -1,4 +1,3 @@
-
 from multiprocessing import Pool
 from multiprocessing.sharedctypes import Value
 from unittest import result
@@ -14,6 +13,8 @@ from paramiko.ssh_exception import AuthenticationException
 import time
 from concurrent.futures import ProcessPoolExecutor, wait
 
+USERNAME = 'xcg6761'
+MAX_THREADS = 1
 print('Starting initilization.')
 StartTime = time.time
 hp_devices = DataFrame()
@@ -28,12 +29,18 @@ devices_ips_list = []
 cisco_devices_ips_list = ()
 platform_cisco = 'cisco_ios'
 platform_hp = 'hp_procurve'
-USERNAME = 'xcg6761'
 password = getpass.getpass('Enter your Passwort:')
 netdevice = []
 vendor_list = ['cisco', 'hp']
-MAX_THREADS = 1
 
+df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',dtype=str, usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
+    
+# Generate a list of dictionary-items, one item per line with additional keywords
+for i, row in df1.iterrows():
+    d = row.to_dict()
+    print(d)
+    print('next')
+    devices.append(d)
 
 def ciscoconfig(device):
     #net_connect=ConnectHandler(device_type=platform, ip=devices_ips_list [i], username=username, password=password)
@@ -88,15 +95,6 @@ def upload_nemiko(netdevice):
 
 
 def main():
-    df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',dtype=str, usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
-    
-    # Generate a list of dictionary-items, one item per line with additional keywords
-    for i, row in df1.iterrows():
-        d = row.to_dict()
-        print(d)
-        print('next')
-        devices.append(d)
-
     if (i for i in devices if i["Modell"] == "Cisco Catalyst 9500 Switch" or ['Model'] == 'Cisco Catalyst 9300L Switch'):
         SOURCE_FILE = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
     elif(i for i in devices if i["Model"] == "Cisco Catalyst 9200L Switch"):
