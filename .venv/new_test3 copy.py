@@ -74,10 +74,7 @@ def upload_nemiko(netdevice):
         ssh_conn = ConnectHandler(**netdevice[0])
         transfer_dict = {}
         print("start transfeer")
-        transfer_dict = file_transfer(ssh_conn,
-                            source_file=netdevice[1],
-                            dest_file=netdevice[1],
-                            )
+        transfer_dict = file_transfer(ssh_conn, source_file=netdevice[1], dest_file=netdevice[1])
         print(80*"=")
         print('Results for', netdevice[0]+':')
         print('File exists already: ',transfer_dict['file_exists'])
