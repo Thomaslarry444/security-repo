@@ -107,18 +107,18 @@ def main():
  print(80*"=")
  print('Please, confirm the upload of',SOURCE_FILE+' on: ')
  print(*devices_ips_list, sep ='\n')
- prompt = str("Proceed?")
+prompt = str("Proceed?")
 
- if confirm(prompt=prompt, resp=False) == True:
-         # --- Get credentials
-         print(80*"-")
-         USERNAME = input('Please insert your username: ')
-         print("And your password")
-         PASSWORD = getpass()
-         print(80*"-")
+#  if confirm(prompt=prompt, resp=False) == True:
+#          # --- Get credentials
+#          print(80*"-")
+#          USERNAME = input('Please insert your username: ')
+#          print("And your password")
+#          PASSWORD = password
+#          print(80*"-")
 
  # --- Get the time for timing
-         start_time = time()
+start_time = time()
 
      # --- Set the number of threads
 pool = ProcessPoolExecutor(MAX_THREADS)
