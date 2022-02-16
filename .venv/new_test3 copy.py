@@ -14,7 +14,7 @@ from paramiko.ssh_exception import AuthenticationException
 import time
 from concurrent.futures import ProcessPoolExecutor, wait
 
-print('hello test')
+print('Starting initilization.')
 StartTime = time.time
 hp_devices = DataFrame()
 hp_devices_ip = DataFrame()
@@ -29,7 +29,7 @@ cisco_devices_ips_list = ()
 platform_cisco = 'cisco_ios'
 platform_hp = 'hp_procurve'
 USERNAME = 'xcg6761'
-password = getpass.getpass('Passwort:')
+password = getpass.getpass('Enter your Passwort:')
 netdevice = []
 vendor_list = ['cisco', 'hp']
 MAX_THREADS = 1
@@ -112,15 +112,15 @@ def main():
     Future_List_cisco = []
     # Future_List_hp=[]
     for ip in (devices):
-        if ip['Seriennr'].str.startswith('F'):
+        if ip['Seriennr'].startswith('F'):
             netdevice = {'device_type': platform_cisco,
                         'Host': ip['IP-Adresse'],
                         'username': USERNAME,
                         'password': password,
                         'port': 22
                         }             
-            Future = pool.submit(upload_nemiko, netdevice)
-            Future_List_cisco.append(Future)
+        Future = pool.submit(upload_nemiko, netdevice)
+        Future_List_cisco.append(Future)
 
 
 if (__name__ == '__main__'):
