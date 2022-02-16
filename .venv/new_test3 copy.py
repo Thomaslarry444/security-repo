@@ -32,7 +32,6 @@ platform_hp = 'hp_procurve'
 password = getpass.getpass('Enter your Passwort:')
 netdevice = []
 vendor_list = ['cisco', 'hp']
-source_file=""
 
 df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',dtype=str, usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
     
