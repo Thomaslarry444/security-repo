@@ -132,7 +132,6 @@ pool = ProcessPoolExecutor(MAX_THREADS)
 Future_List_cisco = []
 # Future_List_hp=[]
 for ip in (devices):
-
     if ip['Seriennr'].str.startswith('F'):
         netdevice = {'device_type': platform_cisco,
                     'Host': ip['IP-Adresse'],
