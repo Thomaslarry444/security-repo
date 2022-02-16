@@ -98,7 +98,6 @@ def upload_nemiko(netdevice):
 
 
 def main():
-    
     # --- Set the number of threads
     pool = ProcessPoolExecutor(MAX_THREADS)
     args=[2]
