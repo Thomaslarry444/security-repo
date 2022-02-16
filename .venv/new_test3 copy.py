@@ -32,6 +32,7 @@ platform_hp = 'hp_procurve'
 password = getpass.getpass('Enter your Passwort:')
 netdevice = []
 vendor_list = ['cisco', 'hp']
+source_file=""
 
 df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',dtype=str, usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
     
@@ -95,13 +96,7 @@ def upload_nemiko(netdevice):
 
 
 def main():
-    if (i for i in devices if i["Modell"] == "Cisco Catalyst 9500 Switch" or ['Model'] == 'Cisco Catalyst 9300L Switch'):
-        SOURCE_FILE = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
-    elif(i for i in devices if i["Model"] == "Cisco Catalyst 9200L Switch"):
-        SOURCE_FILE = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
-    elif (i for i in devices if i["Model"] == "Cisco Catalyst 9200L Switch"):
-        SOURCE_FILE = ''
-
+    
     # --- Set the number of threads
     pool = ProcessPoolExecutor(MAX_THREADS)
 
@@ -109,11 +104,19 @@ def main():
     # Future_List_hp=[]
     for ip in (devices):
         if ip['Seriennr'].startswith('F'):
+            if (ip["Modell"] == "Cisco Catalyst 9500 Switch" or ['Model'] == 'Cisco Catalyst 9300L Switch'):
+                source_file = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+            elif (ip["Model"] == "Cisco Catalyst 9200L Switch"):
+                source_file = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+            elif (ip["Model"] == "Cisco Catalyst 9200L Switch"):
+                source_file = ''
+            
             netdevice = {'device_type': platform_cisco,
                         'Host': ip['IP-Adresse'],
                         'username': USERNAME,
                         'password': password,
-                        'port': 22
+                        'port': 22,
+                        'sourceFile':source_file
                         }             
         Future = pool.submit(upload_nemiko, netdevice)
         Future_List_cisco.append(Future)
