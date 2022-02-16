@@ -73,8 +73,8 @@ def upload_nemiko(netdevice):
         ssh_conn = ConnectHandler(**netdevice)
         transfer_dict = {}
         transfer_dict = file_transfer(ssh_conn,
-                            source_file=SOURCE_FILE,
-                            dest_file=SOURCE_FILE,
+                            source_file=netdevice['source_file'],
+                            dest_file=netdevice['source_file'],
                             )
         print(80*"=")
         print('Results for', netdevice+':')
