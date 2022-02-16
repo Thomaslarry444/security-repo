@@ -98,11 +98,9 @@ def main():
         devices.append(d)
 
     if (i for i in devices if i["Modell"] == "Cisco Catalyst 9500 Switch" or ['Model'] == 'Cisco Catalyst 9300L Switch'):
-        SOURCE_FILE = (
-            r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+        SOURCE_FILE = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
     elif(i for i in devices if i["Model"] == "Cisco Catalyst 9200L Switch"):
-        SOURCE_FILE = (
-            r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
+        SOURCE_FILE = (r'X:\_RZ-WAN\agree21LAN\Software\LAN-Switches\cat9k_lite_iosxe.17.03.04b.SPA.bin')
     elif (i for i in devices if i["Model"] == "Cisco Catalyst 9200L Switch"):
         SOURCE_FILE = ''
 
