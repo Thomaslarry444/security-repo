@@ -67,30 +67,30 @@ def hpconfig(device):
 
 def upload_nemiko(netdevice):
     print("starte thread")
-    print("Upload on:", netdevice)
+    print("Upload on:", netdevice[0])
     # Create the Netmiko SSH connection
     try:
         print("start connect")
-        ssh_conn = ConnectHandler(**netdevice)
+        ssh_conn = ConnectHandler(**netdevice[0])
         transfer_dict = {}
         print("start transfeer")
         transfer_dict = file_transfer(ssh_conn,
-                            source_file=netdevice['source_file'],
-                            dest_file=netdevice['source_file'],
+                            source_file=netdevice[1],
+                            dest_file=netdevice[1],
                             )
         print(80*"=")
-        print('Results for', netdevice+':')
+        print('Results for', netdevice[0]+':')
         print('File exists already: ',transfer_dict['file_exists'])
         print('File transferred: ',transfer_dict['file_transferred'])
         print('MD5 verified :',transfer_dict['file_verified'])
     except NetMikoTimeoutException:
         print(80*"=")
-        print('Results for', netdevice+':')
+        print('Results for', netdevice[0]+':')
         print('Skipped: SSH Timed out')
         #continue
     except (AuthenticationException, NetMikoAuthenticationException):
         print(80*"=")
-        print('Results for', netdevice+':')
+        print('Results for', netdevice[0]+':')
         print('Skipped: Authentication failed')
         #continue'''
 
@@ -101,7 +101,7 @@ def main():
     
     # --- Set the number of threads
     pool = ProcessPoolExecutor(MAX_THREADS)
-
+    args=[2]
     Future_List_cisco = []
     # Future_List_hp=[]
     for ip in (devices):
@@ -119,9 +119,11 @@ def main():
                         'username': USERNAME,
                         'password': password,
                         'port': 22,
-                        'sourceFile':source_file
-                        }             
-            Future = pool.submit(upload_nemiko, netdevice)
+                        'verbose': True
+                        }
+            args[0]=netdevice
+            args[1]=source_file     
+            Future = pool.submit(upload_nemiko, args)
             Future_List_cisco.append(Future)
 
 
