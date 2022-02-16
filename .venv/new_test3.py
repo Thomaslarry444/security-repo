@@ -103,11 +103,11 @@ def confirm(prompt=None, resp=False):
          if ans == 'n' or ans == 'N':
              return False
 def main():
-     ## --- Ask confirmation
+## --- Ask confirmation
  print(80*"=")
  print('Please, confirm the upload of',SOURCE_FILE+' on: ')
  print(*devices_ips_list, sep ='\n')
-prompt = str("Proceed?")
+ prompt = str("Proceed?")
 
 #  if confirm(prompt=prompt, resp=False) == True:
 #          # --- Get credentials
@@ -118,7 +118,7 @@ prompt = str("Proceed?")
 #          print(80*"-")
 
  # --- Get the time for timing
-start_time = time()
+# start_time = time()
 
      # --- Set the number of threads
 pool = ProcessPoolExecutor(MAX_THREADS)
