@@ -70,8 +70,10 @@ def upload_nemiko(netdevice):
     print("Upload on:", netdevice)
     # Create the Netmiko SSH connection
     try:
+        print("start connect")
         ssh_conn = ConnectHandler(**netdevice)
         transfer_dict = {}
+        print("start transfeer")
         transfer_dict = file_transfer(ssh_conn,
                             source_file=netdevice['source_file'],
                             dest_file=netdevice['source_file'],
