@@ -100,7 +100,6 @@ def upload_nemiko(netdevice):
 def main():
     # --- Set the number of threads
     pool = ProcessPoolExecutor(MAX_THREADS)
-    args=[2]
     Future_List_cisco = []
     # Future_List_hp=[]
     for ip in (devices):
@@ -120,8 +119,7 @@ def main():
                         'port': 22,
                         'verbose': True
                         }
-            args[0]=netdevice
-            args[1]=source_file     
+            args=[netdevice,source_file]  
             Future = pool.submit(upload_nemiko, args)
             Future_List_cisco.append(Future)
 
