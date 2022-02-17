@@ -70,11 +70,12 @@ def upload_nemiko(netdevice):
     print("starte thread")
     print("Upload on:", netdevice[0])
     # Create the Netmiko SSH connection
-    try:
+    device_details= netdevice[0]
+    with ConnectHandler(**device_details) as ssh_conn:
         print("start connect")
         #ssh_conn = ConnectHandler(**netdevice[0])
-        device_details= netdevice[0]
-        ssh_conn= ConnectHandler(**device_details)
+        
+        
         transfer_dict = {}
         print("start transfeer")
         transfer_dict = file_transfer(ssh_conn, source_file=netdevice[1], dest_file=netdevice[1],file_system='flash:',direction='put',overwrite_file=True)
@@ -83,18 +84,18 @@ def upload_nemiko(netdevice):
         print('File exists already: ',transfer_dict['file_exists'])
         print('File transferred: ',transfer_dict['file_transferred'])
         print('MD5 verified :',transfer_dict['file_verified'])
-    except NetMikoTimeoutException:
-        print(80*"=")
-        print('Results for', netdevice[0]+':')
-        print('Skipped: SSH Timed out')
-        #continue
-    except (AuthenticationException, NetMikoAuthenticationException):
-        print(80*"=")
-        print('Results for', netdevice[0]+':')
-        print('Skipped: Authentication failed')
-        #continue
+    # except NetMikoTimeoutException:
+    #     print(80*"=")
+    #     print('Results for', netdevice[0]+':')
+    #     print('Skipped: SSH Timed out')
+    #      #continue
+    # except (AuthenticationException, NetMikoAuthenticationException):
+    #     print(80*"=")
+    #     print('Results for', netdevice[0]+':')
+    #     print('Skipped: Authentication failed')
+    #      #continue
 
- # --- Confirmation function
+#  # --- Confirmation function
 
 
 def main():
