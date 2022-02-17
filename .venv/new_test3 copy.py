@@ -33,6 +33,7 @@ platform_hp = 'hp_procurve'
 password = getpass.getpass('Enter your Passwort:')
 netdevice = []
 vendor_list = ['cisco', 'hp']
+device_details=[]
 
 df1 = pd.read_csv(r'C:\Users\XCG6761\Documents\python\Mappe1.csv', sep=';',dtype=str, usecols=['Hostname', 'IP-Adresse', 'Modell', 'Seriennr'])
     
@@ -71,8 +72,9 @@ def upload_nemiko(netdevice):
     # Create the Netmiko SSH connection
     try:
         print("start connect")
-        ssh_conn = ConnectHandler(**netdevice[0])
-    #with ConnectHandler(**netdevice[0]) as ssh_conn:
+        #ssh_conn = ConnectHandler(**netdevice[0])
+        device_details= netdevice[0]
+        ssh_conn= ConnectHandler(**device_details)
         transfer_dict = {}
         print("start transfeer")
         transfer_dict = file_transfer(ssh_conn, source_file=netdevice[1], dest_file=netdevice[1],file_system='flash:',direction='put',overwrite_file=True)
@@ -85,12 +87,12 @@ def upload_nemiko(netdevice):
         print(80*"=")
         print('Results for', netdevice[0]+':')
         print('Skipped: SSH Timed out')
-        continue
+        #continue
     except (AuthenticationException, NetMikoAuthenticationException):
         print(80*"=")
         print('Results for', netdevice[0]+':')
         print('Skipped: Authentication failed')
-        continue
+        #continue
 
  # --- Confirmation function
 
