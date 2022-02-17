@@ -26,8 +26,6 @@ df1 = DataFrame()
 devices = []
 cisco_devices = DataFrame()
 devices_ips_Model = DataFrame()
-devices_ips_list = []
-cisco_devices_ips_list = ()
 platform_cisco = 'cisco_ios'
 platform_hp = 'hp_procurve'
 password = getpass.getpass('Enter your Passwort:')
@@ -71,7 +69,9 @@ def upload_nemiko(netdevice):
     print("Upload on:", netdevice[0])
     # Create the Netmiko SSH connection
     device_details= netdevice[0]
-    with ConnectHandler(**device_details) as ssh_conn:
+    try: 
+        ssh_conn=ConnectHandler(**device_details)
+        
         print("start connect")
         #ssh_conn = ConnectHandler(**netdevice[0])
         
@@ -84,16 +84,16 @@ def upload_nemiko(netdevice):
         print('File exists already: ',transfer_dict['file_exists'])
         print('File transferred: ',transfer_dict['file_transferred'])
         print('MD5 verified :',transfer_dict['file_verified'])
-    # except NetMikoTimeoutException:
-    #     print(80*"=")
-    #     print('Results for', netdevice[0]+':')
-    #     print('Skipped: SSH Timed out')
+    except NetMikoTimeoutException:
+         print(80*"=")
+         print('Results for', netdevice[0]+':')
+         print('Skipped: SSH Timed out')
     #      #continue
-    # except (AuthenticationException, NetMikoAuthenticationException):
-    #     print(80*"=")
-    #     print('Results for', netdevice[0]+':')
-    #     print('Skipped: Authentication failed')
-    #      #continue
+    except (AuthenticationException, NetMikoAuthenticationException):
+        print(80*"=")
+        print('Results for', netdevice[0]+':')
+        print('Skipped: Authentication failed')
+          #continue
 
 #  # --- Confirmation function
 
@@ -114,8 +114,8 @@ def main():
             elif (ip["Modell"] == "Cisco Catalyst 9200L Switch"):
                 source_file = ''           
             netdevice = {'device_type': platform_cisco,
-                        'IP': ip['IP-Adresse'],
-                        'username': USERNAME,
+                        'ip': ip['IP-Adresse'],
+                        'username': USERNAME,##string username+,
                         'password': password,
                         'port': 22,
                         'verbose': True
