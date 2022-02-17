@@ -114,7 +114,7 @@ def main():
             elif (ip["Modell"] == "Cisco Catalyst 9200L Switch"):
                 source_file = ''           
             netdevice = {'device_type': platform_cisco,
-                        'Host': ip['IP-Adresse'],
+                        'IP': ip['IP-Adresse'],
                         'username': USERNAME,
                         'password': password,
                         'port': 22,
