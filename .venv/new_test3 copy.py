@@ -1,12 +1,13 @@
+#from curses import flash
 from multiprocessing import Pool
 from multiprocessing.sharedctypes import Value
 from unittest import result
 import pandas as pd
 from netmiko import ConnectHandler
-from argparse import ArgumentParser
+#from argparse import ArgumentParser
 from pandas.core.frame import DataFrame
 import getpass
-import os.path
+#import os.path
 from netmiko import ConnectHandler, file_transfer
 from netmiko.ssh_exception import NetMikoAuthenticationException, NetMikoTimeoutException
 from paramiko.ssh_exception import AuthenticationException
@@ -14,7 +15,7 @@ import time
 from concurrent.futures import ProcessPoolExecutor, wait
 
 USERNAME = 'xcg6761'
-MAX_THREADS = 1
+MAX_THREADS = 10
 print('Starting initilization.')
 StartTime = time.time
 hp_devices = DataFrame()
@@ -72,9 +73,10 @@ def upload_nemiko(netdevice):
     try:
         print("start connect")
         ssh_conn = ConnectHandler(**netdevice[0])
+    #with ConnectHandler(**netdevice[0]) as ssh_conn:
         transfer_dict = {}
         print("start transfeer")
-        transfer_dict = file_transfer(ssh_conn, source_file=netdevice[1], dest_file=netdevice[1])
+        transfer_dict = file_transfer(ssh_conn, source_file=netdevice[1], dest_file=netdevice[1],file_system='flash:',direction='put',overwrite_file=True)
         print(80*"=")
         print('Results for', netdevice[0]+':')
         print('File exists already: ',transfer_dict['file_exists'])
@@ -84,12 +86,12 @@ def upload_nemiko(netdevice):
         print(80*"=")
         print('Results for', netdevice[0]+':')
         print('Skipped: SSH Timed out')
-        #continue
+        continue
     except (AuthenticationException, NetMikoAuthenticationException):
         print(80*"=")
         print('Results for', netdevice[0]+':')
         print('Skipped: Authentication failed')
-        #continue'''
+        continue
 
  # --- Confirmation function
 
@@ -119,7 +121,7 @@ def main():
             args=[netdevice,source_file]  
             Future = pool.submit(upload_nemiko, args)
             Future_List_cisco.append(Future)
-
+    wait(Future_List_cisco)
 
 if (__name__ == '__main__'):
     main()
