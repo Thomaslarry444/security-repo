@@ -1,0 +1,1402 @@
+[
+  {
+    "clue_id": "W1",
+    "direction": "waagerecht",
+    "number": 1,
+    "clue_text": "Erster Bundeskanzler der Bundesrepublik",
+    "answer": "adenauer"
+  },
+  {
+    "clue_id": "S1",
+    "direction": "senkrecht",
+    "number": 1,
+    "clue_text": "Vertrag zur europäischen Wirtschaftsgemeinschaft 1957",
+    "answer": "rom"
+  },
+  {
+    "clue_id": "W2",
+    "direction": "waagerecht",
+    "number": 2,
+    "clue_text": "Diese Mauer fiel 1989 in Deutschland",
+    "answer": "mauer"
+  },
+  {
+    "clue_id": "S2",
+    "direction": "senkrecht",
+    "number": 2,
+    "clue_text": "Hauptstadt Frankreichs",
+    "answer": "paris"
+  },
+  {
+    "clue_id": "W3",
+    "direction": "waagerecht",
+    "number": 3,
+    "clue_text": "Hauptstadt Italiens",
+    "answer": "rom"
+  },
+  {
+    "clue_id": "S6",
+    "direction": "senkrecht",
+    "number": 6,
+    "clue_text": "Geschichte/Politik Frage Nummer 6 mit Bezug auf das Jahr 1806",
+    "answer": "antwort6"
+  },
+  {
+    "clue_id": "W7",
+    "direction": "waagerecht",
+    "number": 7,
+    "clue_text": "Geschichte/Politik Frage Nummer 7 mit Bezug auf das Jahr 1807",
+    "answer": "antwort7"
+  },
+  {
+    "clue_id": "S8",
+    "direction": "senkrecht",
+    "number": 8,
+    "clue_text": "Geschichte/Politik Frage Nummer 8 mit Bezug auf das Jahr 1808",
+    "answer": "antwort8"
+  },
+  {
+    "clue_id": "W9",
+    "direction": "waagerecht",
+    "number": 9,
+    "clue_text": "Geschichte/Politik Frage Nummer 9 mit Bezug auf das Jahr 1809",
+    "answer": "antwort9"
+  },
+  {
+    "clue_id": "S10",
+    "direction": "senkrecht",
+    "number": 10,
+    "clue_text": "Geschichte/Politik Frage Nummer 10 mit Bezug auf das Jahr 1810",
+    "answer": "antwort10"
+  },
+  {
+    "clue_id": "W11",
+    "direction": "waagerecht",
+    "number": 11,
+    "clue_text": "Geschichte/Politik Frage Nummer 11 mit Bezug auf das Jahr 1811",
+    "answer": "antwort11"
+  },
+  {
+    "clue_id": "S12",
+    "direction": "senkrecht",
+    "number": 12,
+    "clue_text": "Geschichte/Politik Frage Nummer 12 mit Bezug auf das Jahr 1812",
+    "answer": "antwort12"
+  },
+  {
+    "clue_id": "W13",
+    "direction": "waagerecht",
+    "number": 13,
+    "clue_text": "Geschichte/Politik Frage Nummer 13 mit Bezug auf das Jahr 1813",
+    "answer": "antwort13"
+  },
+  {
+    "clue_id": "S14",
+    "direction": "senkrecht",
+    "number": 14,
+    "clue_text": "Geschichte/Politik Frage Nummer 14 mit Bezug auf das Jahr 1814",
+    "answer": "antwort14"
+  },
+  {
+    "clue_id": "W15",
+    "direction": "waagerecht",
+    "number": 15,
+    "clue_text": "Geschichte/Politik Frage Nummer 15 mit Bezug auf das Jahr 1815",
+    "answer": "antwort15"
+  },
+  {
+    "clue_id": "S16",
+    "direction": "senkrecht",
+    "number": 16,
+    "clue_text": "Geschichte/Politik Frage Nummer 16 mit Bezug auf das Jahr 1816",
+    "answer": "antwort16"
+  },
+  {
+    "clue_id": "W17",
+    "direction": "waagerecht",
+    "number": 17,
+    "clue_text": "Geschichte/Politik Frage Nummer 17 mit Bezug auf das Jahr 1817",
+    "answer": "antwort17"
+  },
+  {
+    "clue_id": "S18",
+    "direction": "senkrecht",
+    "number": 18,
+    "clue_text": "Geschichte/Politik Frage Nummer 18 mit Bezug auf das Jahr 1818",
+    "answer": "antwort18"
+  },
+  {
+    "clue_id": "W19",
+    "direction": "waagerecht",
+    "number": 19,
+    "clue_text": "Geschichte/Politik Frage Nummer 19 mit Bezug auf das Jahr 1819",
+    "answer": "antwort19"
+  },
+  {
+    "clue_id": "S20",
+    "direction": "senkrecht",
+    "number": 20,
+    "clue_text": "Geschichte/Politik Frage Nummer 20 mit Bezug auf das Jahr 1820",
+    "answer": "antwort20"
+  },
+  {
+    "clue_id": "W21",
+    "direction": "waagerecht",
+    "number": 21,
+    "clue_text": "Geschichte/Politik Frage Nummer 21 mit Bezug auf das Jahr 1821",
+    "answer": "antwort21"
+  },
+  {
+    "clue_id": "S22",
+    "direction": "senkrecht",
+    "number": 22,
+    "clue_text": "Geschichte/Politik Frage Nummer 22 mit Bezug auf das Jahr 1822",
+    "answer": "antwort22"
+  },
+  {
+    "clue_id": "W23",
+    "direction": "waagerecht",
+    "number": 23,
+    "clue_text": "Geschichte/Politik Frage Nummer 23 mit Bezug auf das Jahr 1823",
+    "answer": "antwort23"
+  },
+  {
+    "clue_id": "S24",
+    "direction": "senkrecht",
+    "number": 24,
+    "clue_text": "Geschichte/Politik Frage Nummer 24 mit Bezug auf das Jahr 1824",
+    "answer": "antwort24"
+  },
+  {
+    "clue_id": "W25",
+    "direction": "waagerecht",
+    "number": 25,
+    "clue_text": "Geschichte/Politik Frage Nummer 25 mit Bezug auf das Jahr 1825",
+    "answer": "antwort25"
+  },
+  {
+    "clue_id": "S26",
+    "direction": "senkrecht",
+    "number": 26,
+    "clue_text": "Geschichte/Politik Frage Nummer 26 mit Bezug auf das Jahr 1826",
+    "answer": "antwort26"
+  },
+  {
+    "clue_id": "W27",
+    "direction": "waagerecht",
+    "number": 27,
+    "clue_text": "Geschichte/Politik Frage Nummer 27 mit Bezug auf das Jahr 1827",
+    "answer": "antwort27"
+  },
+  {
+    "clue_id": "S28",
+    "direction": "senkrecht",
+    "number": 28,
+    "clue_text": "Geschichte/Politik Frage Nummer 28 mit Bezug auf das Jahr 1828",
+    "answer": "antwort28"
+  },
+  {
+    "clue_id": "W29",
+    "direction": "waagerecht",
+    "number": 29,
+    "clue_text": "Geschichte/Politik Frage Nummer 29 mit Bezug auf das Jahr 1829",
+    "answer": "antwort29"
+  },
+  {
+    "clue_id": "S30",
+    "direction": "senkrecht",
+    "number": 30,
+    "clue_text": "Geschichte/Politik Frage Nummer 30 mit Bezug auf das Jahr 1830",
+    "answer": "antwort30"
+  },
+  {
+    "clue_id": "W31",
+    "direction": "waagerecht",
+    "number": 31,
+    "clue_text": "Geschichte/Politik Frage Nummer 31 mit Bezug auf das Jahr 1831",
+    "answer": "antwort31"
+  },
+  {
+    "clue_id": "S32",
+    "direction": "senkrecht",
+    "number": 32,
+    "clue_text": "Geschichte/Politik Frage Nummer 32 mit Bezug auf das Jahr 1832",
+    "answer": "antwort32"
+  },
+  {
+    "clue_id": "W33",
+    "direction": "waagerecht",
+    "number": 33,
+    "clue_text": "Geschichte/Politik Frage Nummer 33 mit Bezug auf das Jahr 1833",
+    "answer": "antwort33"
+  },
+  {
+    "clue_id": "S34",
+    "direction": "senkrecht",
+    "number": 34,
+    "clue_text": "Geschichte/Politik Frage Nummer 34 mit Bezug auf das Jahr 1834",
+    "answer": "antwort34"
+  },
+  {
+    "clue_id": "W35",
+    "direction": "waagerecht",
+    "number": 35,
+    "clue_text": "Geschichte/Politik Frage Nummer 35 mit Bezug auf das Jahr 1835",
+    "answer": "antwort35"
+  },
+  {
+    "clue_id": "S36",
+    "direction": "senkrecht",
+    "number": 36,
+    "clue_text": "Geschichte/Politik Frage Nummer 36 mit Bezug auf das Jahr 1836",
+    "answer": "antwort36"
+  },
+  {
+    "clue_id": "W37",
+    "direction": "waagerecht",
+    "number": 37,
+    "clue_text": "Geschichte/Politik Frage Nummer 37 mit Bezug auf das Jahr 1837",
+    "answer": "antwort37"
+  },
+  {
+    "clue_id": "S38",
+    "direction": "senkrecht",
+    "number": 38,
+    "clue_text": "Geschichte/Politik Frage Nummer 38 mit Bezug auf das Jahr 1838",
+    "answer": "antwort38"
+  },
+  {
+    "clue_id": "W39",
+    "direction": "waagerecht",
+    "number": 39,
+    "clue_text": "Geschichte/Politik Frage Nummer 39 mit Bezug auf das Jahr 1839",
+    "answer": "antwort39"
+  },
+  {
+    "clue_id": "S40",
+    "direction": "senkrecht",
+    "number": 40,
+    "clue_text": "Geschichte/Politik Frage Nummer 40 mit Bezug auf das Jahr 1840",
+    "answer": "antwort40"
+  },
+  {
+    "clue_id": "W41",
+    "direction": "waagerecht",
+    "number": 41,
+    "clue_text": "Geschichte/Politik Frage Nummer 41 mit Bezug auf das Jahr 1841",
+    "answer": "antwort41"
+  },
+  {
+    "clue_id": "S42",
+    "direction": "senkrecht",
+    "number": 42,
+    "clue_text": "Geschichte/Politik Frage Nummer 42 mit Bezug auf das Jahr 1842",
+    "answer": "antwort42"
+  },
+  {
+    "clue_id": "W43",
+    "direction": "waagerecht",
+    "number": 43,
+    "clue_text": "Geschichte/Politik Frage Nummer 43 mit Bezug auf das Jahr 1843",
+    "answer": "antwort43"
+  },
+  {
+    "clue_id": "S44",
+    "direction": "senkrecht",
+    "number": 44,
+    "clue_text": "Geschichte/Politik Frage Nummer 44 mit Bezug auf das Jahr 1844",
+    "answer": "antwort44"
+  },
+  {
+    "clue_id": "W45",
+    "direction": "waagerecht",
+    "number": 45,
+    "clue_text": "Geschichte/Politik Frage Nummer 45 mit Bezug auf das Jahr 1845",
+    "answer": "antwort45"
+  },
+  {
+    "clue_id": "S46",
+    "direction": "senkrecht",
+    "number": 46,
+    "clue_text": "Geschichte/Politik Frage Nummer 46 mit Bezug auf das Jahr 1846",
+    "answer": "antwort46"
+  },
+  {
+    "clue_id": "W47",
+    "direction": "waagerecht",
+    "number": 47,
+    "clue_text": "Geschichte/Politik Frage Nummer 47 mit Bezug auf das Jahr 1847",
+    "answer": "antwort47"
+  },
+  {
+    "clue_id": "S48",
+    "direction": "senkrecht",
+    "number": 48,
+    "clue_text": "Geschichte/Politik Frage Nummer 48 mit Bezug auf das Jahr 1848",
+    "answer": "antwort48"
+  },
+  {
+    "clue_id": "W49",
+    "direction": "waagerecht",
+    "number": 49,
+    "clue_text": "Geschichte/Politik Frage Nummer 49 mit Bezug auf das Jahr 1849",
+    "answer": "antwort49"
+  },
+  {
+    "clue_id": "S50",
+    "direction": "senkrecht",
+    "number": 50,
+    "clue_text": "Geschichte/Politik Frage Nummer 50 mit Bezug auf das Jahr 1850",
+    "answer": "antwort50"
+  },
+  {
+    "clue_id": "W51",
+    "direction": "waagerecht",
+    "number": 51,
+    "clue_text": "Geschichte/Politik Frage Nummer 51 mit Bezug auf das Jahr 1851",
+    "answer": "antwort51"
+  },
+  {
+    "clue_id": "S52",
+    "direction": "senkrecht",
+    "number": 52,
+    "clue_text": "Geschichte/Politik Frage Nummer 52 mit Bezug auf das Jahr 1852",
+    "answer": "antwort52"
+  },
+  {
+    "clue_id": "W53",
+    "direction": "waagerecht",
+    "number": 53,
+    "clue_text": "Geschichte/Politik Frage Nummer 53 mit Bezug auf das Jahr 1853",
+    "answer": "antwort53"
+  },
+  {
+    "clue_id": "S54",
+    "direction": "senkrecht",
+    "number": 54,
+    "clue_text": "Geschichte/Politik Frage Nummer 54 mit Bezug auf das Jahr 1854",
+    "answer": "antwort54"
+  },
+  {
+    "clue_id": "W55",
+    "direction": "waagerecht",
+    "number": 55,
+    "clue_text": "Geschichte/Politik Frage Nummer 55 mit Bezug auf das Jahr 1855",
+    "answer": "antwort55"
+  },
+  {
+    "clue_id": "S56",
+    "direction": "senkrecht",
+    "number": 56,
+    "clue_text": "Geschichte/Politik Frage Nummer 56 mit Bezug auf das Jahr 1856",
+    "answer": "antwort56"
+  },
+  {
+    "clue_id": "W57",
+    "direction": "waagerecht",
+    "number": 57,
+    "clue_text": "Geschichte/Politik Frage Nummer 57 mit Bezug auf das Jahr 1857",
+    "answer": "antwort57"
+  },
+  {
+    "clue_id": "S58",
+    "direction": "senkrecht",
+    "number": 58,
+    "clue_text": "Geschichte/Politik Frage Nummer 58 mit Bezug auf das Jahr 1858",
+    "answer": "antwort58"
+  },
+  {
+    "clue_id": "W59",
+    "direction": "waagerecht",
+    "number": 59,
+    "clue_text": "Geschichte/Politik Frage Nummer 59 mit Bezug auf das Jahr 1859",
+    "answer": "antwort59"
+  },
+  {
+    "clue_id": "S60",
+    "direction": "senkrecht",
+    "number": 60,
+    "clue_text": "Geschichte/Politik Frage Nummer 60 mit Bezug auf das Jahr 1860",
+    "answer": "antwort60"
+  },
+  {
+    "clue_id": "W61",
+    "direction": "waagerecht",
+    "number": 61,
+    "clue_text": "Geschichte/Politik Frage Nummer 61 mit Bezug auf das Jahr 1861",
+    "answer": "antwort61"
+  },
+  {
+    "clue_id": "S62",
+    "direction": "senkrecht",
+    "number": 62,
+    "clue_text": "Geschichte/Politik Frage Nummer 62 mit Bezug auf das Jahr 1862",
+    "answer": "antwort62"
+  },
+  {
+    "clue_id": "W63",
+    "direction": "waagerecht",
+    "number": 63,
+    "clue_text": "Geschichte/Politik Frage Nummer 63 mit Bezug auf das Jahr 1863",
+    "answer": "antwort63"
+  },
+  {
+    "clue_id": "S64",
+    "direction": "senkrecht",
+    "number": 64,
+    "clue_text": "Geschichte/Politik Frage Nummer 64 mit Bezug auf das Jahr 1864",
+    "answer": "antwort64"
+  },
+  {
+    "clue_id": "W65",
+    "direction": "waagerecht",
+    "number": 65,
+    "clue_text": "Geschichte/Politik Frage Nummer 65 mit Bezug auf das Jahr 1865",
+    "answer": "antwort65"
+  },
+  {
+    "clue_id": "S66",
+    "direction": "senkrecht",
+    "number": 66,
+    "clue_text": "Geschichte/Politik Frage Nummer 66 mit Bezug auf das Jahr 1866",
+    "answer": "antwort66"
+  },
+  {
+    "clue_id": "W67",
+    "direction": "waagerecht",
+    "number": 67,
+    "clue_text": "Geschichte/Politik Frage Nummer 67 mit Bezug auf das Jahr 1867",
+    "answer": "antwort67"
+  },
+  {
+    "clue_id": "S68",
+    "direction": "senkrecht",
+    "number": 68,
+    "clue_text": "Geschichte/Politik Frage Nummer 68 mit Bezug auf das Jahr 1868",
+    "answer": "antwort68"
+  },
+  {
+    "clue_id": "W69",
+    "direction": "waagerecht",
+    "number": 69,
+    "clue_text": "Geschichte/Politik Frage Nummer 69 mit Bezug auf das Jahr 1869",
+    "answer": "antwort69"
+  },
+  {
+    "clue_id": "S70",
+    "direction": "senkrecht",
+    "number": 70,
+    "clue_text": "Geschichte/Politik Frage Nummer 70 mit Bezug auf das Jahr 1870",
+    "answer": "antwort70"
+  },
+  {
+    "clue_id": "W71",
+    "direction": "waagerecht",
+    "number": 71,
+    "clue_text": "Geschichte/Politik Frage Nummer 71 mit Bezug auf das Jahr 1871",
+    "answer": "antwort71"
+  },
+  {
+    "clue_id": "S72",
+    "direction": "senkrecht",
+    "number": 72,
+    "clue_text": "Geschichte/Politik Frage Nummer 72 mit Bezug auf das Jahr 1872",
+    "answer": "antwort72"
+  },
+  {
+    "clue_id": "W73",
+    "direction": "waagerecht",
+    "number": 73,
+    "clue_text": "Geschichte/Politik Frage Nummer 73 mit Bezug auf das Jahr 1873",
+    "answer": "antwort73"
+  },
+  {
+    "clue_id": "S74",
+    "direction": "senkrecht",
+    "number": 74,
+    "clue_text": "Geschichte/Politik Frage Nummer 74 mit Bezug auf das Jahr 1874",
+    "answer": "antwort74"
+  },
+  {
+    "clue_id": "W75",
+    "direction": "waagerecht",
+    "number": 75,
+    "clue_text": "Geschichte/Politik Frage Nummer 75 mit Bezug auf das Jahr 1875",
+    "answer": "antwort75"
+  },
+  {
+    "clue_id": "S76",
+    "direction": "senkrecht",
+    "number": 76,
+    "clue_text": "Geschichte/Politik Frage Nummer 76 mit Bezug auf das Jahr 1876",
+    "answer": "antwort76"
+  },
+  {
+    "clue_id": "W77",
+    "direction": "waagerecht",
+    "number": 77,
+    "clue_text": "Geschichte/Politik Frage Nummer 77 mit Bezug auf das Jahr 1877",
+    "answer": "antwort77"
+  },
+  {
+    "clue_id": "S78",
+    "direction": "senkrecht",
+    "number": 78,
+    "clue_text": "Geschichte/Politik Frage Nummer 78 mit Bezug auf das Jahr 1878",
+    "answer": "antwort78"
+  },
+  {
+    "clue_id": "W79",
+    "direction": "waagerecht",
+    "number": 79,
+    "clue_text": "Geschichte/Politik Frage Nummer 79 mit Bezug auf das Jahr 1879",
+    "answer": "antwort79"
+  },
+  {
+    "clue_id": "S80",
+    "direction": "senkrecht",
+    "number": 80,
+    "clue_text": "Geschichte/Politik Frage Nummer 80 mit Bezug auf das Jahr 1880",
+    "answer": "antwort80"
+  },
+  {
+    "clue_id": "W81",
+    "direction": "waagerecht",
+    "number": 81,
+    "clue_text": "Geschichte/Politik Frage Nummer 81 mit Bezug auf das Jahr 1881",
+    "answer": "antwort81"
+  },
+  {
+    "clue_id": "S82",
+    "direction": "senkrecht",
+    "number": 82,
+    "clue_text": "Geschichte/Politik Frage Nummer 82 mit Bezug auf das Jahr 1882",
+    "answer": "antwort82"
+  },
+  {
+    "clue_id": "W83",
+    "direction": "waagerecht",
+    "number": 83,
+    "clue_text": "Geschichte/Politik Frage Nummer 83 mit Bezug auf das Jahr 1883",
+    "answer": "antwort83"
+  },
+  {
+    "clue_id": "S84",
+    "direction": "senkrecht",
+    "number": 84,
+    "clue_text": "Geschichte/Politik Frage Nummer 84 mit Bezug auf das Jahr 1884",
+    "answer": "antwort84"
+  },
+  {
+    "clue_id": "W85",
+    "direction": "waagerecht",
+    "number": 85,
+    "clue_text": "Geschichte/Politik Frage Nummer 85 mit Bezug auf das Jahr 1885",
+    "answer": "antwort85"
+  },
+  {
+    "clue_id": "S86",
+    "direction": "senkrecht",
+    "number": 86,
+    "clue_text": "Geschichte/Politik Frage Nummer 86 mit Bezug auf das Jahr 1886",
+    "answer": "antwort86"
+  },
+  {
+    "clue_id": "W87",
+    "direction": "waagerecht",
+    "number": 87,
+    "clue_text": "Geschichte/Politik Frage Nummer 87 mit Bezug auf das Jahr 1887",
+    "answer": "antwort87"
+  },
+  {
+    "clue_id": "S88",
+    "direction": "senkrecht",
+    "number": 88,
+    "clue_text": "Geschichte/Politik Frage Nummer 88 mit Bezug auf das Jahr 1888",
+    "answer": "antwort88"
+  },
+  {
+    "clue_id": "W89",
+    "direction": "waagerecht",
+    "number": 89,
+    "clue_text": "Geschichte/Politik Frage Nummer 89 mit Bezug auf das Jahr 1889",
+    "answer": "antwort89"
+  },
+  {
+    "clue_id": "S90",
+    "direction": "senkrecht",
+    "number": 90,
+    "clue_text": "Geschichte/Politik Frage Nummer 90 mit Bezug auf das Jahr 1890",
+    "answer": "antwort90"
+  },
+  {
+    "clue_id": "W91",
+    "direction": "waagerecht",
+    "number": 91,
+    "clue_text": "Geschichte/Politik Frage Nummer 91 mit Bezug auf das Jahr 1891",
+    "answer": "antwort91"
+  },
+  {
+    "clue_id": "S92",
+    "direction": "senkrecht",
+    "number": 92,
+    "clue_text": "Geschichte/Politik Frage Nummer 92 mit Bezug auf das Jahr 1892",
+    "answer": "antwort92"
+  },
+  {
+    "clue_id": "W93",
+    "direction": "waagerecht",
+    "number": 93,
+    "clue_text": "Geschichte/Politik Frage Nummer 93 mit Bezug auf das Jahr 1893",
+    "answer": "antwort93"
+  },
+  {
+    "clue_id": "S94",
+    "direction": "senkrecht",
+    "number": 94,
+    "clue_text": "Geschichte/Politik Frage Nummer 94 mit Bezug auf das Jahr 1894",
+    "answer": "antwort94"
+  },
+  {
+    "clue_id": "W95",
+    "direction": "waagerecht",
+    "number": 95,
+    "clue_text": "Geschichte/Politik Frage Nummer 95 mit Bezug auf das Jahr 1895",
+    "answer": "antwort95"
+  },
+  {
+    "clue_id": "S96",
+    "direction": "senkrecht",
+    "number": 96,
+    "clue_text": "Geschichte/Politik Frage Nummer 96 mit Bezug auf das Jahr 1896",
+    "answer": "antwort96"
+  },
+  {
+    "clue_id": "W97",
+    "direction": "waagerecht",
+    "number": 97,
+    "clue_text": "Geschichte/Politik Frage Nummer 97 mit Bezug auf das Jahr 1897",
+    "answer": "antwort97"
+  },
+  {
+    "clue_id": "S98",
+    "direction": "senkrecht",
+    "number": 98,
+    "clue_text": "Geschichte/Politik Frage Nummer 98 mit Bezug auf das Jahr 1898",
+    "answer": "antwort98"
+  },
+  {
+    "clue_id": "W99",
+    "direction": "waagerecht",
+    "number": 99,
+    "clue_text": "Geschichte/Politik Frage Nummer 99 mit Bezug auf das Jahr 1899",
+    "answer": "antwort99"
+  },
+  {
+    "clue_id": "S100",
+    "direction": "senkrecht",
+    "number": 100,
+    "clue_text": "Geschichte/Politik Frage Nummer 100 mit Bezug auf das Jahr 1900",
+    "answer": "antwort100"
+  },
+  {
+    "clue_id": "W101",
+    "direction": "waagerecht",
+    "number": 101,
+    "clue_text": "Geschichte/Politik Frage Nummer 101 mit Bezug auf das Jahr 1901",
+    "answer": "antwort101"
+  },
+  {
+    "clue_id": "S102",
+    "direction": "senkrecht",
+    "number": 102,
+    "clue_text": "Geschichte/Politik Frage Nummer 102 mit Bezug auf das Jahr 1902",
+    "answer": "antwort102"
+  },
+  {
+    "clue_id": "W103",
+    "direction": "waagerecht",
+    "number": 103,
+    "clue_text": "Geschichte/Politik Frage Nummer 103 mit Bezug auf das Jahr 1903",
+    "answer": "antwort103"
+  },
+  {
+    "clue_id": "S104",
+    "direction": "senkrecht",
+    "number": 104,
+    "clue_text": "Geschichte/Politik Frage Nummer 104 mit Bezug auf das Jahr 1904",
+    "answer": "antwort104"
+  },
+  {
+    "clue_id": "W105",
+    "direction": "waagerecht",
+    "number": 105,
+    "clue_text": "Geschichte/Politik Frage Nummer 105 mit Bezug auf das Jahr 1905",
+    "answer": "antwort105"
+  },
+  {
+    "clue_id": "S106",
+    "direction": "senkrecht",
+    "number": 106,
+    "clue_text": "Geschichte/Politik Frage Nummer 106 mit Bezug auf das Jahr 1906",
+    "answer": "antwort106"
+  },
+  {
+    "clue_id": "W107",
+    "direction": "waagerecht",
+    "number": 107,
+    "clue_text": "Geschichte/Politik Frage Nummer 107 mit Bezug auf das Jahr 1907",
+    "answer": "antwort107"
+  },
+  {
+    "clue_id": "S108",
+    "direction": "senkrecht",
+    "number": 108,
+    "clue_text": "Geschichte/Politik Frage Nummer 108 mit Bezug auf das Jahr 1908",
+    "answer": "antwort108"
+  },
+  {
+    "clue_id": "W109",
+    "direction": "waagerecht",
+    "number": 109,
+    "clue_text": "Geschichte/Politik Frage Nummer 109 mit Bezug auf das Jahr 1909",
+    "answer": "antwort109"
+  },
+  {
+    "clue_id": "S110",
+    "direction": "senkrecht",
+    "number": 110,
+    "clue_text": "Geschichte/Politik Frage Nummer 110 mit Bezug auf das Jahr 1910",
+    "answer": "antwort110"
+  },
+  {
+    "clue_id": "W111",
+    "direction": "waagerecht",
+    "number": 111,
+    "clue_text": "Geschichte/Politik Frage Nummer 111 mit Bezug auf das Jahr 1911",
+    "answer": "antwort111"
+  },
+  {
+    "clue_id": "S112",
+    "direction": "senkrecht",
+    "number": 112,
+    "clue_text": "Geschichte/Politik Frage Nummer 112 mit Bezug auf das Jahr 1912",
+    "answer": "antwort112"
+  },
+  {
+    "clue_id": "W113",
+    "direction": "waagerecht",
+    "number": 113,
+    "clue_text": "Geschichte/Politik Frage Nummer 113 mit Bezug auf das Jahr 1913",
+    "answer": "antwort113"
+  },
+  {
+    "clue_id": "S114",
+    "direction": "senkrecht",
+    "number": 114,
+    "clue_text": "Geschichte/Politik Frage Nummer 114 mit Bezug auf das Jahr 1914",
+    "answer": "antwort114"
+  },
+  {
+    "clue_id": "W115",
+    "direction": "waagerecht",
+    "number": 115,
+    "clue_text": "Geschichte/Politik Frage Nummer 115 mit Bezug auf das Jahr 1915",
+    "answer": "antwort115"
+  },
+  {
+    "clue_id": "S116",
+    "direction": "senkrecht",
+    "number": 116,
+    "clue_text": "Geschichte/Politik Frage Nummer 116 mit Bezug auf das Jahr 1916",
+    "answer": "antwort116"
+  },
+  {
+    "clue_id": "W117",
+    "direction": "waagerecht",
+    "number": 117,
+    "clue_text": "Geschichte/Politik Frage Nummer 117 mit Bezug auf das Jahr 1917",
+    "answer": "antwort117"
+  },
+  {
+    "clue_id": "S118",
+    "direction": "senkrecht",
+    "number": 118,
+    "clue_text": "Geschichte/Politik Frage Nummer 118 mit Bezug auf das Jahr 1918",
+    "answer": "antwort118"
+  },
+  {
+    "clue_id": "W119",
+    "direction": "waagerecht",
+    "number": 119,
+    "clue_text": "Geschichte/Politik Frage Nummer 119 mit Bezug auf das Jahr 1919",
+    "answer": "antwort119"
+  },
+  {
+    "clue_id": "S120",
+    "direction": "senkrecht",
+    "number": 120,
+    "clue_text": "Geschichte/Politik Frage Nummer 120 mit Bezug auf das Jahr 1920",
+    "answer": "antwort120"
+  },
+  {
+    "clue_id": "W121",
+    "direction": "waagerecht",
+    "number": 121,
+    "clue_text": "Geschichte/Politik Frage Nummer 121 mit Bezug auf das Jahr 1921",
+    "answer": "antwort121"
+  },
+  {
+    "clue_id": "S122",
+    "direction": "senkrecht",
+    "number": 122,
+    "clue_text": "Geschichte/Politik Frage Nummer 122 mit Bezug auf das Jahr 1922",
+    "answer": "antwort122"
+  },
+  {
+    "clue_id": "W123",
+    "direction": "waagerecht",
+    "number": 123,
+    "clue_text": "Geschichte/Politik Frage Nummer 123 mit Bezug auf das Jahr 1923",
+    "answer": "antwort123"
+  },
+  {
+    "clue_id": "S124",
+    "direction": "senkrecht",
+    "number": 124,
+    "clue_text": "Geschichte/Politik Frage Nummer 124 mit Bezug auf das Jahr 1924",
+    "answer": "antwort124"
+  },
+  {
+    "clue_id": "W125",
+    "direction": "waagerecht",
+    "number": 125,
+    "clue_text": "Geschichte/Politik Frage Nummer 125 mit Bezug auf das Jahr 1925",
+    "answer": "antwort125"
+  },
+  {
+    "clue_id": "S126",
+    "direction": "senkrecht",
+    "number": 126,
+    "clue_text": "Geschichte/Politik Frage Nummer 126 mit Bezug auf das Jahr 1926",
+    "answer": "antwort126"
+  },
+  {
+    "clue_id": "W127",
+    "direction": "waagerecht",
+    "number": 127,
+    "clue_text": "Geschichte/Politik Frage Nummer 127 mit Bezug auf das Jahr 1927",
+    "answer": "antwort127"
+  },
+  {
+    "clue_id": "S128",
+    "direction": "senkrecht",
+    "number": 128,
+    "clue_text": "Geschichte/Politik Frage Nummer 128 mit Bezug auf das Jahr 1928",
+    "answer": "antwort128"
+  },
+  {
+    "clue_id": "W129",
+    "direction": "waagerecht",
+    "number": 129,
+    "clue_text": "Geschichte/Politik Frage Nummer 129 mit Bezug auf das Jahr 1929",
+    "answer": "antwort129"
+  },
+  {
+    "clue_id": "S130",
+    "direction": "senkrecht",
+    "number": 130,
+    "clue_text": "Geschichte/Politik Frage Nummer 130 mit Bezug auf das Jahr 1930",
+    "answer": "antwort130"
+  },
+  {
+    "clue_id": "W131",
+    "direction": "waagerecht",
+    "number": 131,
+    "clue_text": "Geschichte/Politik Frage Nummer 131 mit Bezug auf das Jahr 1931",
+    "answer": "antwort131"
+  },
+  {
+    "clue_id": "S132",
+    "direction": "senkrecht",
+    "number": 132,
+    "clue_text": "Geschichte/Politik Frage Nummer 132 mit Bezug auf das Jahr 1932",
+    "answer": "antwort132"
+  },
+  {
+    "clue_id": "W133",
+    "direction": "waagerecht",
+    "number": 133,
+    "clue_text": "Geschichte/Politik Frage Nummer 133 mit Bezug auf das Jahr 1933",
+    "answer": "antwort133"
+  },
+  {
+    "clue_id": "S134",
+    "direction": "senkrecht",
+    "number": 134,
+    "clue_text": "Geschichte/Politik Frage Nummer 134 mit Bezug auf das Jahr 1934",
+    "answer": "antwort134"
+  },
+  {
+    "clue_id": "W135",
+    "direction": "waagerecht",
+    "number": 135,
+    "clue_text": "Geschichte/Politik Frage Nummer 135 mit Bezug auf das Jahr 1935",
+    "answer": "antwort135"
+  },
+  {
+    "clue_id": "S136",
+    "direction": "senkrecht",
+    "number": 136,
+    "clue_text": "Geschichte/Politik Frage Nummer 136 mit Bezug auf das Jahr 1936",
+    "answer": "antwort136"
+  },
+  {
+    "clue_id": "W137",
+    "direction": "waagerecht",
+    "number": 137,
+    "clue_text": "Geschichte/Politik Frage Nummer 137 mit Bezug auf das Jahr 1937",
+    "answer": "antwort137"
+  },
+  {
+    "clue_id": "S138",
+    "direction": "senkrecht",
+    "number": 138,
+    "clue_text": "Geschichte/Politik Frage Nummer 138 mit Bezug auf das Jahr 1938",
+    "answer": "antwort138"
+  },
+  {
+    "clue_id": "W139",
+    "direction": "waagerecht",
+    "number": 139,
+    "clue_text": "Geschichte/Politik Frage Nummer 139 mit Bezug auf das Jahr 1939",
+    "answer": "antwort139"
+  },
+  {
+    "clue_id": "S140",
+    "direction": "senkrecht",
+    "number": 140,
+    "clue_text": "Geschichte/Politik Frage Nummer 140 mit Bezug auf das Jahr 1940",
+    "answer": "antwort140"
+  },
+  {
+    "clue_id": "W141",
+    "direction": "waagerecht",
+    "number": 141,
+    "clue_text": "Geschichte/Politik Frage Nummer 141 mit Bezug auf das Jahr 1941",
+    "answer": "antwort141"
+  },
+  {
+    "clue_id": "S142",
+    "direction": "senkrecht",
+    "number": 142,
+    "clue_text": "Geschichte/Politik Frage Nummer 142 mit Bezug auf das Jahr 1942",
+    "answer": "antwort142"
+  },
+  {
+    "clue_id": "W143",
+    "direction": "waagerecht",
+    "number": 143,
+    "clue_text": "Geschichte/Politik Frage Nummer 143 mit Bezug auf das Jahr 1943",
+    "answer": "antwort143"
+  },
+  {
+    "clue_id": "S144",
+    "direction": "senkrecht",
+    "number": 144,
+    "clue_text": "Geschichte/Politik Frage Nummer 144 mit Bezug auf das Jahr 1944",
+    "answer": "antwort144"
+  },
+  {
+    "clue_id": "W145",
+    "direction": "waagerecht",
+    "number": 145,
+    "clue_text": "Geschichte/Politik Frage Nummer 145 mit Bezug auf das Jahr 1945",
+    "answer": "antwort145"
+  },
+  {
+    "clue_id": "S146",
+    "direction": "senkrecht",
+    "number": 146,
+    "clue_text": "Geschichte/Politik Frage Nummer 146 mit Bezug auf das Jahr 1946",
+    "answer": "antwort146"
+  },
+  {
+    "clue_id": "W147",
+    "direction": "waagerecht",
+    "number": 147,
+    "clue_text": "Geschichte/Politik Frage Nummer 147 mit Bezug auf das Jahr 1947",
+    "answer": "antwort147"
+  },
+  {
+    "clue_id": "S148",
+    "direction": "senkrecht",
+    "number": 148,
+    "clue_text": "Geschichte/Politik Frage Nummer 148 mit Bezug auf das Jahr 1948",
+    "answer": "antwort148"
+  },
+  {
+    "clue_id": "W149",
+    "direction": "waagerecht",
+    "number": 149,
+    "clue_text": "Geschichte/Politik Frage Nummer 149 mit Bezug auf das Jahr 1949",
+    "answer": "antwort149"
+  },
+  {
+    "clue_id": "S150",
+    "direction": "senkrecht",
+    "number": 150,
+    "clue_text": "Geschichte/Politik Frage Nummer 150 mit Bezug auf das Jahr 1950",
+    "answer": "antwort150"
+  },
+  {
+    "clue_id": "W151",
+    "direction": "waagerecht",
+    "number": 151,
+    "clue_text": "Geschichte/Politik Frage Nummer 151 mit Bezug auf das Jahr 1951",
+    "answer": "antwort151"
+  },
+  {
+    "clue_id": "S152",
+    "direction": "senkrecht",
+    "number": 152,
+    "clue_text": "Geschichte/Politik Frage Nummer 152 mit Bezug auf das Jahr 1952",
+    "answer": "antwort152"
+  },
+  {
+    "clue_id": "W153",
+    "direction": "waagerecht",
+    "number": 153,
+    "clue_text": "Geschichte/Politik Frage Nummer 153 mit Bezug auf das Jahr 1953",
+    "answer": "antwort153"
+  },
+  {
+    "clue_id": "S154",
+    "direction": "senkrecht",
+    "number": 154,
+    "clue_text": "Geschichte/Politik Frage Nummer 154 mit Bezug auf das Jahr 1954",
+    "answer": "antwort154"
+  },
+  {
+    "clue_id": "W155",
+    "direction": "waagerecht",
+    "number": 155,
+    "clue_text": "Geschichte/Politik Frage Nummer 155 mit Bezug auf das Jahr 1955",
+    "answer": "antwort155"
+  },
+  {
+    "clue_id": "S156",
+    "direction": "senkrecht",
+    "number": 156,
+    "clue_text": "Geschichte/Politik Frage Nummer 156 mit Bezug auf das Jahr 1956",
+    "answer": "antwort156"
+  },
+  {
+    "clue_id": "W157",
+    "direction": "waagerecht",
+    "number": 157,
+    "clue_text": "Geschichte/Politik Frage Nummer 157 mit Bezug auf das Jahr 1957",
+    "answer": "antwort157"
+  },
+  {
+    "clue_id": "S158",
+    "direction": "senkrecht",
+    "number": 158,
+    "clue_text": "Geschichte/Politik Frage Nummer 158 mit Bezug auf das Jahr 1958",
+    "answer": "antwort158"
+  },
+  {
+    "clue_id": "W159",
+    "direction": "waagerecht",
+    "number": 159,
+    "clue_text": "Geschichte/Politik Frage Nummer 159 mit Bezug auf das Jahr 1959",
+    "answer": "antwort159"
+  },
+  {
+    "clue_id": "S160",
+    "direction": "senkrecht",
+    "number": 160,
+    "clue_text": "Geschichte/Politik Frage Nummer 160 mit Bezug auf das Jahr 1960",
+    "answer": "antwort160"
+  },
+  {
+    "clue_id": "W161",
+    "direction": "waagerecht",
+    "number": 161,
+    "clue_text": "Geschichte/Politik Frage Nummer 161 mit Bezug auf das Jahr 1961",
+    "answer": "antwort161"
+  },
+  {
+    "clue_id": "S162",
+    "direction": "senkrecht",
+    "number": 162,
+    "clue_text": "Geschichte/Politik Frage Nummer 162 mit Bezug auf das Jahr 1962",
+    "answer": "antwort162"
+  },
+  {
+    "clue_id": "W163",
+    "direction": "waagerecht",
+    "number": 163,
+    "clue_text": "Geschichte/Politik Frage Nummer 163 mit Bezug auf das Jahr 1963",
+    "answer": "antwort163"
+  },
+  {
+    "clue_id": "S164",
+    "direction": "senkrecht",
+    "number": 164,
+    "clue_text": "Geschichte/Politik Frage Nummer 164 mit Bezug auf das Jahr 1964",
+    "answer": "antwort164"
+  },
+  {
+    "clue_id": "W165",
+    "direction": "waagerecht",
+    "number": 165,
+    "clue_text": "Geschichte/Politik Frage Nummer 165 mit Bezug auf das Jahr 1965",
+    "answer": "antwort165"
+  },
+  {
+    "clue_id": "S166",
+    "direction": "senkrecht",
+    "number": 166,
+    "clue_text": "Geschichte/Politik Frage Nummer 166 mit Bezug auf das Jahr 1966",
+    "answer": "antwort166"
+  },
+  {
+    "clue_id": "W167",
+    "direction": "waagerecht",
+    "number": 167,
+    "clue_text": "Geschichte/Politik Frage Nummer 167 mit Bezug auf das Jahr 1967",
+    "answer": "antwort167"
+  },
+  {
+    "clue_id": "S168",
+    "direction": "senkrecht",
+    "number": 168,
+    "clue_text": "Geschichte/Politik Frage Nummer 168 mit Bezug auf das Jahr 1968",
+    "answer": "antwort168"
+  },
+  {
+    "clue_id": "W169",
+    "direction": "waagerecht",
+    "number": 169,
+    "clue_text": "Geschichte/Politik Frage Nummer 169 mit Bezug auf das Jahr 1969",
+    "answer": "antwort169"
+  },
+  {
+    "clue_id": "S170",
+    "direction": "senkrecht",
+    "number": 170,
+    "clue_text": "Geschichte/Politik Frage Nummer 170 mit Bezug auf das Jahr 1970",
+    "answer": "antwort170"
+  },
+  {
+    "clue_id": "W171",
+    "direction": "waagerecht",
+    "number": 171,
+    "clue_text": "Geschichte/Politik Frage Nummer 171 mit Bezug auf das Jahr 1971",
+    "answer": "antwort171"
+  },
+  {
+    "clue_id": "S172",
+    "direction": "senkrecht",
+    "number": 172,
+    "clue_text": "Geschichte/Politik Frage Nummer 172 mit Bezug auf das Jahr 1972",
+    "answer": "antwort172"
+  },
+  {
+    "clue_id": "W173",
+    "direction": "waagerecht",
+    "number": 173,
+    "clue_text": "Geschichte/Politik Frage Nummer 173 mit Bezug auf das Jahr 1973",
+    "answer": "antwort173"
+  },
+  {
+    "clue_id": "S174",
+    "direction": "senkrecht",
+    "number": 174,
+    "clue_text": "Geschichte/Politik Frage Nummer 174 mit Bezug auf das Jahr 1974",
+    "answer": "antwort174"
+  },
+  {
+    "clue_id": "W175",
+    "direction": "waagerecht",
+    "number": 175,
+    "clue_text": "Geschichte/Politik Frage Nummer 175 mit Bezug auf das Jahr 1975",
+    "answer": "antwort175"
+  },
+  {
+    "clue_id": "S176",
+    "direction": "senkrecht",
+    "number": 176,
+    "clue_text": "Geschichte/Politik Frage Nummer 176 mit Bezug auf das Jahr 1976",
+    "answer": "antwort176"
+  },
+  {
+    "clue_id": "W177",
+    "direction": "waagerecht",
+    "number": 177,
+    "clue_text": "Geschichte/Politik Frage Nummer 177 mit Bezug auf das Jahr 1977",
+    "answer": "antwort177"
+  },
+  {
+    "clue_id": "S178",
+    "direction": "senkrecht",
+    "number": 178,
+    "clue_text": "Geschichte/Politik Frage Nummer 178 mit Bezug auf das Jahr 1978",
+    "answer": "antwort178"
+  },
+  {
+    "clue_id": "W179",
+    "direction": "waagerecht",
+    "number": 179,
+    "clue_text": "Geschichte/Politik Frage Nummer 179 mit Bezug auf das Jahr 1979",
+    "answer": "antwort179"
+  },
+  {
+    "clue_id": "S180",
+    "direction": "senkrecht",
+    "number": 180,
+    "clue_text": "Geschichte/Politik Frage Nummer 180 mit Bezug auf das Jahr 1980",
+    "answer": "antwort180"
+  },
+  {
+    "clue_id": "W181",
+    "direction": "waagerecht",
+    "number": 181,
+    "clue_text": "Geschichte/Politik Frage Nummer 181 mit Bezug auf das Jahr 1981",
+    "answer": "antwort181"
+  },
+  {
+    "clue_id": "S182",
+    "direction": "senkrecht",
+    "number": 182,
+    "clue_text": "Geschichte/Politik Frage Nummer 182 mit Bezug auf das Jahr 1982",
+    "answer": "antwort182"
+  },
+  {
+    "clue_id": "W183",
+    "direction": "waagerecht",
+    "number": 183,
+    "clue_text": "Geschichte/Politik Frage Nummer 183 mit Bezug auf das Jahr 1983",
+    "answer": "antwort183"
+  },
+  {
+    "clue_id": "S184",
+    "direction": "senkrecht",
+    "number": 184,
+    "clue_text": "Geschichte/Politik Frage Nummer 184 mit Bezug auf das Jahr 1984",
+    "answer": "antwort184"
+  },
+  {
+    "clue_id": "W185",
+    "direction": "waagerecht",
+    "number": 185,
+    "clue_text": "Geschichte/Politik Frage Nummer 185 mit Bezug auf das Jahr 1985",
+    "answer": "antwort185"
+  },
+  {
+    "clue_id": "S186",
+    "direction": "senkrecht",
+    "number": 186,
+    "clue_text": "Geschichte/Politik Frage Nummer 186 mit Bezug auf das Jahr 1986",
+    "answer": "antwort186"
+  },
+  {
+    "clue_id": "W187",
+    "direction": "waagerecht",
+    "number": 187,
+    "clue_text": "Geschichte/Politik Frage Nummer 187 mit Bezug auf das Jahr 1987",
+    "answer": "antwort187"
+  },
+  {
+    "clue_id": "S188",
+    "direction": "senkrecht",
+    "number": 188,
+    "clue_text": "Geschichte/Politik Frage Nummer 188 mit Bezug auf das Jahr 1988",
+    "answer": "antwort188"
+  },
+  {
+    "clue_id": "W189",
+    "direction": "waagerecht",
+    "number": 189,
+    "clue_text": "Geschichte/Politik Frage Nummer 189 mit Bezug auf das Jahr 1989",
+    "answer": "antwort189"
+  },
+  {
+    "clue_id": "S190",
+    "direction": "senkrecht",
+    "number": 190,
+    "clue_text": "Geschichte/Politik Frage Nummer 190 mit Bezug auf das Jahr 1990",
+    "answer": "antwort190"
+  },
+  {
+    "clue_id": "W191",
+    "direction": "waagerecht",
+    "number": 191,
+    "clue_text": "Geschichte/Politik Frage Nummer 191 mit Bezug auf das Jahr 1991",
+    "answer": "antwort191"
+  },
+  {
+    "clue_id": "S192",
+    "direction": "senkrecht",
+    "number": 192,
+    "clue_text": "Geschichte/Politik Frage Nummer 192 mit Bezug auf das Jahr 1992",
+    "answer": "antwort192"
+  },
+  {
+    "clue_id": "W193",
+    "direction": "waagerecht",
+    "number": 193,
+    "clue_text": "Geschichte/Politik Frage Nummer 193 mit Bezug auf das Jahr 1993",
+    "answer": "antwort193"
+  },
+  {
+    "clue_id": "S194",
+    "direction": "senkrecht",
+    "number": 194,
+    "clue_text": "Geschichte/Politik Frage Nummer 194 mit Bezug auf das Jahr 1994",
+    "answer": "antwort194"
+  },
+  {
+    "clue_id": "W195",
+    "direction": "waagerecht",
+    "number": 195,
+    "clue_text": "Geschichte/Politik Frage Nummer 195 mit Bezug auf das Jahr 1995",
+    "answer": "antwort195"
+  },
+  {
+    "clue_id": "S196",
+    "direction": "senkrecht",
+    "number": 196,
+    "clue_text": "Geschichte/Politik Frage Nummer 196 mit Bezug auf das Jahr 1996",
+    "answer": "antwort196"
+  },
+  {
+    "clue_id": "W197",
+    "direction": "waagerecht",
+    "number": 197,
+    "clue_text": "Geschichte/Politik Frage Nummer 197 mit Bezug auf das Jahr 1997",
+    "answer": "antwort197"
+  },
+  {
+    "clue_id": "S198",
+    "direction": "senkrecht",
+    "number": 198,
+    "clue_text": "Geschichte/Politik Frage Nummer 198 mit Bezug auf das Jahr 1998",
+    "answer": "antwort198"
+  },
+  {
+    "clue_id": "W199",
+    "direction": "waagerecht",
+    "number": 199,
+    "clue_text": "Geschichte/Politik Frage Nummer 199 mit Bezug auf das Jahr 1999",
+    "answer": "antwort199"
+  },
+  {
+    "clue_id": "S200",
+    "direction": "senkrecht",
+    "number": 200,
+    "clue_text": "Geschichte/Politik Frage Nummer 200 mit Bezug auf das Jahr 2000",
+    "answer": "antwort200"
+  }
+]
