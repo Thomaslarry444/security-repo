@@ -133,6 +133,7 @@ Dann pushst du mit:
 ```bash
 git push origin <dein-branch>
 ```
+Damit testest du den Rätselablauf lokal per Tastatur-Eingabe (ohne Alexa Cloud).
 
 ## Inhalt
 
@@ -141,6 +142,16 @@ git push origin <dein-branch>
 - `engine.py`: Reine Rätsel-Logik (lokal testbar).
 - `skill-interaction-model.json`: Beispiel-Intents für die Alexa Developer Console.
 - `tests/test_engine.py`: Unit-Tests für die Rätsel-Logik.
+
+## Lokal testen
+
+```bash
+cd Python/alexa_audio_kreuzwortraetsel
+python3 -m pip install -r requirements.txt
+python3 -m pip install pytest
+PYTHONPATH=. pytest -q
+python3 run_local.py
+```
 
 ## Deployment zu Alexa (Kurzfassung)
 
