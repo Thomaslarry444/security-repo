@@ -17,6 +17,122 @@ cd Python/alexa_audio_kreuzwortraetsel
 python3 run_local.py
 ```
 
+Damit testest du den echten Rätselablauf lokal per Tastatur-Eingabe (ohne Alexa Cloud). `run_local.py` ist also nicht nur Deko, sondern ein voll nutzbarer lokaler Spielmodus.
+
+
+## Schwierigkeit erhöhen
+
+Aktuell gibt es drei Stufen im Code:
+
+- `leicht`
+- `mittel`
+- `schwer`
+
+Im lokalen Runner wählst du die Stufe direkt beim Start.
+
+Beispiel:
+
+```bash
+cd Python/alexa_audio_kreuzwortraetsel
+python3 run_local.py
+# dann im Prompt: schwer
+```
+
+Für Alexa (Lambda) wird aktuell standardmäßig `mittel` geladen. Du kannst später leicht erweitern, z. B. mit einem eigenen `DifficultyIntent`, der `CrosswordGame.with_sample_puzzle("schwer")` startet.
+
+## macOS: Python-Environment sauber aufsetzen (empfohlen)
+
+### 1) Python prüfen
+
+```bash
+python3 --version
+```
+
+Wenn Python fehlt, installiere es z. B. mit Homebrew:
+
+```bash
+brew install python
+```
+
+### 2) In den Repo-Ordner wechseln
+
+```bash
+cd /pfad/zu/deinem/repo/<repo-name>
+```
+
+### 3) Virtuelle Umgebung anlegen
+
+```bash
+python3 -m venv .venv
+```
+
+### 4) Virtuelle Umgebung aktivieren
+
+```bash
+source .venv/bin/activate
+```
+
+### 5) Abhängigkeiten installieren
+
+Wichtig: `requirements.txt` liegt **nicht** im Repo-Root, sondern in `Python/alexa_audio_kreuzwortraetsel`.
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r Python/alexa_audio_kreuzwortraetsel/requirements.txt
+python -m pip install pytest
+```
+
+### 6) Tests ausführen (aus dem Repo-Root)
+
+```bash
+PYTHONPATH=. pytest -q Python/alexa_audio_kreuzwortraetsel/tests
+```
+
+Alternative (wenn du lieber in den Projektordner wechselst):
+
+```bash
+cd Python/alexa_audio_kreuzwortraetsel
+pytest -q
+python run_local.py
+```
+
+### 7) Umgebung später verlassen
+
+```bash
+deactivate
+```
+
+## Häufige Fehler (genau wie in deinem Log)
+
+- `pythonpython3: command not found`
+  - Das war nur ein Tippfehler. Richtig ist: `python3 -m venv .venv`
+- `Could not open requirements file: requirements.txt`
+  - Du warst im Repo-Root. Nutze den Pfad:
+    `python -m pip install -r Python/alexa_audio_kreuzwortraetsel/requirements.txt`
+- `ModuleNotFoundError: No module named 'engine'`
+  - Tritt auf, wenn Tests aus einem anderen Arbeitsordner laufen. Die Tests wurden so angepasst, dass sie das Projektverzeichnis selbst finden.
+
+## Ist der Ordner schon in dein Git-Repo gepusht?
+
+Das kannst du lokal so prüfen:
+
+```bash
+# Zeigt den letzten lokalen Commit
+git log --oneline -n 1
+
+# Zeigt, ob dein Branch vor/hinter origin liegt
+git status -sb
+
+# Zeigt, ob der Ordner im aktuellen Commit enthalten ist
+git ls-tree --name-only -r HEAD | grep 'Python/alexa_audio_kreuzwortraetsel'
+```
+
+Wenn `git status -sb` z. B. `ahead 1` zeigt, ist es **lokal committed**, aber noch nicht auf Remote gepusht.
+Dann pushst du mit:
+
+```bash
+git push origin <dein-branch>
+```
 Damit testest du den Rätselablauf lokal per Tastatur-Eingabe (ohne Alexa Cloud).
 
 ## Inhalt

@@ -7,9 +7,24 @@ ohne Alexa Developer Console oder AWS.
 from engine import CrosswordGame
 
 
+VALID_DIFFICULTIES = {"leicht", "mittel", "schwer"}
+
+
+def select_difficulty() -> str:
+    raw = input("Schwierigkeit wählen (leicht/mittel/schwer, Enter=mittel): ").strip().lower()
+    if not raw:
+        return "mittel"
+    if raw not in VALID_DIFFICULTIES:
+        print("Unbekannte Auswahl, wir nehmen 'mittel'.")
+        return "mittel"
+    return raw
+
+
 def main() -> None:
-    game = CrosswordGame.with_sample_puzzle()
-    print("Audio-Kreuzworträtsel (lokal) gestartet. Tippe 'hilfe' für Befehle.")
+    difficulty = select_difficulty()
+    game = CrosswordGame.with_sample_puzzle(difficulty)
+    print(f"\nAudio-Kreuzworträtsel gestartet (Schwierigkeit: {game.difficulty}).")
+    print("Tippe 'hilfe' für Befehle.")
 
     while not game.is_finished():
         clue = game.next_open_clue()

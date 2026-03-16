@@ -46,7 +46,17 @@ class AnswerIntentHandler(AbstractRequestHandler):
         session = handler_input.attributes_manager.session_attributes
         game: CrosswordGame = session[GAME_KEY]
         clue_id = session[CURRENT_CLUE_KEY]
-        answer = handler_input.request_envelope.request.intent.slots["answer"].value or ""
+        intent = handler_input.request_envelope.request.intent
+        slots = getattr(intent, "slots", None) or {}
+        answer_slot = slots.get("answer")
+        answer_value = (answer_slot.value if answer_slot and getattr(answer_slot, "value", None) else "").strip()
+
+        if not answer_value:
+            speech = "Ich habe deine Lösung nicht verstanden. Bitte wiederhole sie."
+            reprompt = "Bitte nenne deine Lösung."
+            return handler_input.response_builder.speak(speech).ask(reprompt).response
+
+        answer = answer_value
 
         if game.check_answer(clue_id, answer):
             if game.is_finished():
@@ -70,8 +80,31 @@ class HintIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input: HandlerInput) -> Response:
         session = handler_input.attributes_manager.session_attributes
-        game: CrosswordGame = session[GAME_KEY]
-        clue_id = session[CURRENT_CLUE_KEY]
+
+        # Sicherstellen, dass ein Spiel und ein aktueller Hinweis vorhanden sind.
+        game = session.get(GAME_KEY)
+        clue_id = session.get(CURRENT_CLUE_KEY)
+
+        if not isinstance(game, CrosswordGame) or clue_id is None:
+            # Sitzung ist neu oder abgelaufen – ein neues Rätsel starten, ähnlich wie beim Launch.
+            game = CrosswordGame.with_sample_puzzle()
+            session[GAME_KEY] = game
+            clue = game.next_open_clue()
+            if clue:
+                session[CURRENT_CLUE_KEY] = clue.clue_id
+                speech = (
+                    "Es scheint, dass wir noch kein Rätsel laufen haben. "
+                    "Ich starte ein neues Kreuzworträtsel. "
+                    f"Hier ist dein erster Hinweis: {game.format_clue(clue)}"
+                )
+                reprompt = "Bitte nenne deine Lösung."
+            else:
+                speech = "Ich konnte gerade kein Rätsel laden. Bitte versuche es später erneut."
+                reprompt = "Möchtest du es noch einmal versuchen?"
+            return handler_input.response_builder.speak(speech).ask(reprompt).response
+
+        # Gültiger Spielzustand vorhanden – Tipp zum aktuellen Hinweis geben.
+        game = game  # type: CrosswordGame
         hint = game.hint_for(clue_id)
         speech = f"Hier ist dein Tipp. {hint}"
         return handler_input.response_builder.speak(speech).ask("Wie lautet deine Lösung?").response

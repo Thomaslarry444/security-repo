@@ -18,37 +18,36 @@ class Clue:
 class CrosswordGame:
     """Hält den Rätselzustand und prüft Antworten."""
 
-    def __init__(self, clues: List[Clue]) -> None:
+    def __init__(self, clues: List[Clue], difficulty: str = "mittel") -> None:
         self._clues: Dict[str, Clue] = {clue.clue_id: clue for clue in clues}
         self._progress: Dict[str, str] = {}
+        self.difficulty = difficulty
 
     @classmethod
-    def with_sample_puzzle(cls) -> "CrosswordGame":
-        return cls(
-            [
-                Clue(
-                    clue_id="W1",
-                    direction="waagerecht",
-                    number=1,
-                    clue_text="Beliebter Sprachassistent von Amazon",
-                    answer="alexa",
-                ),
-                Clue(
-                    clue_id="S1",
-                    direction="senkrecht",
-                    number=1,
-                    clue_text="Gegenteil von dunkel",
-                    answer="hell",
-                ),
-                Clue(
-                    clue_id="W2",
-                    direction="waagerecht",
-                    number=2,
-                    clue_text="Gerät mit dem man hört",
-                    answer="radio",
-                ),
-            ]
-        )
+    def with_sample_puzzle(cls, difficulty: str = "mittel") -> "CrosswordGame":
+        puzzles: Dict[str, List[Clue]] = {
+            "leicht": [
+                Clue("W1", "waagerecht", 1, "Beliebter Sprachassistent von Amazon", "alexa"),
+                Clue("S1", "senkrecht", 1, "Gegenteil von dunkel", "hell"),
+                Clue("W2", "waagerecht", 2, "Gerät mit dem man hört", "radio"),
+            ],
+            "mittel": [
+                Clue("W1", "waagerecht", 1, "Programmiersprache dieser App", "python"),
+                Clue("S1", "senkrecht", 1, "Cloud-Dienst für Alexa-Backend", "lambda"),
+                Clue("W2", "waagerecht", 2, "Sprachbefehl zum Beenden", "stop"),
+                Clue("S2", "senkrecht", 2, "Kurzer Tipp zum Rätsel", "hinweis"),
+            ],
+            "schwer": [
+                Clue("W1", "waagerecht", 1, "Persistente AWS-NoSQL-Datenbank", "dynamodb"),
+                Clue("S1", "senkrecht", 1, "Strukturierte Sprach-Ausgabe in Alexa", "ssml"),
+                Clue("W2", "waagerecht", 2, "Automatische Spracherkennung", "intent"),
+                Clue("S2", "senkrecht", 2, "Wiederverwendbare Softwarekomponente", "modul"),
+                Clue("W3", "waagerecht", 3, "Schnittstelle zum Testen ohne GUI", "konsole"),
+            ],
+        }
+        selected = puzzles.get(difficulty.lower(), puzzles["mittel"])
+        normalized = difficulty.lower() if difficulty.lower() in puzzles else "mittel"
+        return cls(selected, difficulty=normalized)
 
     def list_open_clues(self) -> List[Clue]:
         return [clue for clue_id, clue in self._clues.items() if clue_id not in self._progress]
