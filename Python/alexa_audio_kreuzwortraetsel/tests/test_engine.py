@@ -37,7 +37,7 @@ def test_hint_format_contains_length_and_first_letter() -> None:
     game = CrosswordGame.with_sample_puzzle("leicht")
     hint = game.hint_for("S1")
     assert "4 Buchstaben" in hint
-    assert "H" in hint
+    assert "beginnt mit H" in hint
 
 
 def test_difficulty_fallback_to_mittel() -> None:
