@@ -25,7 +25,7 @@ Damit testest du den echten Rätselablauf lokal per Tastatur-Eingabe (ohne Alexa
 
 Ja, das geht jetzt direkt:
 
-- Lege/ändere eine JSON-Datei mit Fragen (Beispiel: `custom_questions.json`).
+- Lege/ändere eine JSON-Datei mit Fragen (Beispiel: `custom_questions.json` (aktuell mit 200 Beispiel-Fragen)).
 - Starte `run_local.py` und wähle `j` bei „Eigene Fragen aus JSON laden?“.
 - Gib den Pfad zur Datei an (oder Enter für die Standarddatei).
 
@@ -162,7 +162,7 @@ git push origin <dein-branch>
 ## Inhalt
 
 - `run_local.py`: Lokaler CLI-Start (für IDE und schnelles Testen, inkl. JSON-Fragenimport).
-- `custom_questions.json`: Beispiel für dynamisch geladene Fragen.
+- `custom_questions.json` (aktuell mit 200 Beispiel-Fragen): Beispiel für dynamisch geladene Fragen.
 - `lambda_function.py`: Alexa-Handler für Launch, Antwort, Hinweis und Hilfe.
 - `engine.py`: Reine Rätsel-Logik (lokal testbar).
 - `skill-interaction-model.json`: Beispiel-Intents für die Alexa Developer Console.

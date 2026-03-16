@@ -55,7 +55,7 @@ def test_schwer_has_more_clues_than_leicht() -> None:
 def test_can_load_dynamic_questions_from_json() -> None:
     game = CrosswordGame.from_json_file(PROJECT_DIR / "custom_questions.json")
     assert game.difficulty == "dynamisch"
-    assert game.total_count() == 3
+    assert game.total_count() == 200
     first = game.next_open_clue()
     assert first is not None
     assert game.check_answer(first.clue_id, "adenauer") is True
