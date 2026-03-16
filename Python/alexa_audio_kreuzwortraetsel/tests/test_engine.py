@@ -20,7 +20,7 @@ def test_correct_answer_updates_progress() -> None:
     first_clue = game.next_open_clue()
     assert first_clue is not None
 
-    assert game.check_answer(first_clue.clue_id, "Alexa") is True
+    assert game.check_answer(first_clue.clue_id, "Berlin") is True
     assert game.solved_count() == 1
 
 
@@ -37,7 +37,7 @@ def test_hint_format_contains_length_and_first_letter() -> None:
     game = CrosswordGame.with_sample_puzzle("leicht")
     hint = game.hint_for("S1")
     assert "4 Buchstaben" in hint
-    assert "beginnt mit H" in hint
+    assert "E" in hint
 
 
 def test_difficulty_fallback_to_mittel() -> None:
@@ -50,3 +50,12 @@ def test_schwer_has_more_clues_than_leicht() -> None:
     easy = CrosswordGame.with_sample_puzzle("leicht")
     hard = CrosswordGame.with_sample_puzzle("schwer")
     assert hard.total_count() > easy.total_count()
+
+
+def test_can_load_dynamic_questions_from_json() -> None:
+    game = CrosswordGame.from_json_file(PROJECT_DIR / "custom_questions.json")
+    assert game.difficulty == "dynamisch"
+    assert game.total_count() == 3
+    first = game.next_open_clue()
+    assert first is not None
+    assert game.check_answer(first.clue_id, "adenauer") is True

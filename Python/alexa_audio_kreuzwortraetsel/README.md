@@ -20,6 +20,29 @@ python3 run_local.py
 Damit testest du den echten Rätselablauf lokal per Tastatur-Eingabe (ohne Alexa Cloud). `run_local.py` ist also nicht nur Deko, sondern ein voll nutzbarer lokaler Spielmodus.
 
 
+
+## Fragen dynamisch erweitern
+
+Ja, das geht jetzt direkt:
+
+- Lege/ändere eine JSON-Datei mit Fragen (Beispiel: `custom_questions.json`).
+- Starte `run_local.py` und wähle `j` bei „Eigene Fragen aus JSON laden?“.
+- Gib den Pfad zur Datei an (oder Enter für die Standarddatei).
+
+Format pro Eintrag:
+
+```json
+{
+  "clue_id": "W1",
+  "direction": "waagerecht",
+  "number": 1,
+  "clue_text": "Fragetext",
+  "answer": "loesung"
+}
+```
+
+Damit kannst du jederzeit neue Fragen ergänzen, ohne Python-Code zu ändern.
+
 ## Schwierigkeit erhöhen
 
 Aktuell gibt es drei Stufen im Code:
@@ -27,6 +50,8 @@ Aktuell gibt es drei Stufen im Code:
 - `leicht`
 - `mittel`
 - `schwer`
+
+Die Fragen sind bewusst auf **deutsche/europäische Geschichte, Religion, Sozialkunde und Politik** ausgerichtet (nicht auf IT-Themen).
 
 Im lokalen Runner wählst du die Stufe direkt beim Start.
 
@@ -57,7 +82,7 @@ brew install python
 ### 2) In den Repo-Ordner wechseln
 
 ```bash
-cd /pfad/zu/deinem/repo/<repo-name>
+cd /pfad/zu/deinem/repo/Uniteststore
 ```
 
 ### 3) Virtuelle Umgebung anlegen
@@ -133,25 +158,15 @@ Dann pushst du mit:
 ```bash
 git push origin <dein-branch>
 ```
-Damit testest du den Rätselablauf lokal per Tastatur-Eingabe (ohne Alexa Cloud).
 
 ## Inhalt
 
-- `run_local.py`: Lokaler CLI-Start (für IDE und schnelles Testen).
+- `run_local.py`: Lokaler CLI-Start (für IDE und schnelles Testen, inkl. JSON-Fragenimport).
+- `custom_questions.json`: Beispiel für dynamisch geladene Fragen.
 - `lambda_function.py`: Alexa-Handler für Launch, Antwort, Hinweis und Hilfe.
 - `engine.py`: Reine Rätsel-Logik (lokal testbar).
 - `skill-interaction-model.json`: Beispiel-Intents für die Alexa Developer Console.
 - `tests/test_engine.py`: Unit-Tests für die Rätsel-Logik.
-
-## Lokal testen
-
-```bash
-cd Python/alexa_audio_kreuzwortraetsel
-python3 -m pip install -r requirements.txt
-python3 -m pip install pytest
-PYTHONPATH=. pytest -q
-python3 run_local.py
-```
 
 ## Deployment zu Alexa (Kurzfassung)
 

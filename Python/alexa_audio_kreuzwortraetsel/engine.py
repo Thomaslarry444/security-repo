@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Dict, List, Optional
 
 
@@ -27,27 +29,42 @@ class CrosswordGame:
     def with_sample_puzzle(cls, difficulty: str = "mittel") -> "CrosswordGame":
         puzzles: Dict[str, List[Clue]] = {
             "leicht": [
-                Clue("W1", "waagerecht", 1, "Beliebter Sprachassistent von Amazon", "alexa"),
-                Clue("S1", "senkrecht", 1, "Gegenteil von dunkel", "hell"),
-                Clue("W2", "waagerecht", 2, "Gerät mit dem man hört", "radio"),
+                Clue("W1", "waagerecht", 1, "Hauptstadt von Deutschland", "berlin"),
+                Clue("S1", "senkrecht", 1, "Gemeinsame Währung vieler EU-Staaten", "euro"),
+                Clue("W2", "waagerecht", 2, "Name des Reformators Martin ...", "luther"),
             ],
             "mittel": [
-                Clue("W1", "waagerecht", 1, "Programmiersprache dieser App", "python"),
-                Clue("S1", "senkrecht", 1, "Cloud-Dienst für Alexa-Backend", "lambda"),
-                Clue("W2", "waagerecht", 2, "Sprachbefehl zum Beenden", "stop"),
-                Clue("S2", "senkrecht", 2, "Kurzer Tipp zum Rätsel", "hinweis"),
+                Clue("W1", "waagerecht", 1, "Vertrag von 1992 als Meilenstein der EU", "maastricht"),
+                Clue("S1", "senkrecht", 1, "Staatsform Deutschlands", "demokratie"),
+                Clue("W2", "waagerecht", 2, "Gründungsjahr der Bundesrepublik", "1949"),
+                Clue("S2", "senkrecht", 2, "Wahlrecht für alle Erwachsenen", "allgemein"),
             ],
             "schwer": [
-                Clue("W1", "waagerecht", 1, "Persistente AWS-NoSQL-Datenbank", "dynamodb"),
-                Clue("S1", "senkrecht", 1, "Strukturierte Sprach-Ausgabe in Alexa", "ssml"),
-                Clue("W2", "waagerecht", 2, "Automatische Spracherkennung", "intent"),
-                Clue("S2", "senkrecht", 2, "Wiederverwendbare Softwarekomponente", "modul"),
-                Clue("W3", "waagerecht", 3, "Schnittstelle zum Testen ohne GUI", "konsole"),
+                Clue("W1", "waagerecht", 1, "Konferenz von 1938 zur Abtretung des Sudetenlands", "muenchen"),
+                Clue("S1", "senkrecht", 1, "Widerstandsgruppe um Hans und Sophie Scholl", "weisserose"),
+                Clue("W2", "waagerecht", 2, "Politik der Entspannung unter Willy Brandt", "ostpolitik"),
+                Clue("S2", "senkrecht", 2, "Parlament der Europäischen Union", "euparlament"),
+                Clue("W3", "waagerecht", 3, "Friedliche Revolution in der DDR im Jahr", "1989"),
             ],
         }
         selected = puzzles.get(difficulty.lower(), puzzles["mittel"])
         normalized = difficulty.lower() if difficulty.lower() in puzzles else "mittel"
         return cls(selected, difficulty=normalized)
+
+    @classmethod
+    def from_json_file(cls, json_path: str | Path, difficulty: str = "dynamisch") -> "CrosswordGame":
+        data = json.loads(Path(json_path).read_text(encoding="utf-8"))
+        clues = [
+            Clue(
+                clue_id=item["clue_id"],
+                direction=item["direction"],
+                number=int(item["number"]),
+                clue_text=item["clue_text"],
+                answer=str(item["answer"]).strip().lower(),
+            )
+            for item in data
+        ]
+        return cls(clues, difficulty=difficulty)
 
     def list_open_clues(self) -> List[Clue]:
         return [clue for clue_id, clue in self._clues.items() if clue_id not in self._progress]

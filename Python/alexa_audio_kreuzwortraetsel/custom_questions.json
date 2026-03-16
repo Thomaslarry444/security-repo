@@ -1,0 +1,23 @@
+[
+  {
+    "clue_id": "W1",
+    "direction": "waagerecht",
+    "number": 1,
+    "clue_text": "Erster Bundeskanzler der Bundesrepublik",
+    "answer": "adenauer"
+  },
+  {
+    "clue_id": "S1",
+    "direction": "senkrecht",
+    "number": 1,
+    "clue_text": "Vertrag zur europäischen Wirtschaftsgemeinschaft 1957",
+    "answer": "rom"
+  },
+  {
+    "clue_id": "W2",
+    "direction": "waagerecht",
+    "number": 2,
+    "clue_text": "Diese Mauer fiel 1989 in Deutschland",
+    "answer": "mauer"
+  }
+]

@@ -4,6 +4,8 @@ Damit kannst du den Spielablauf in jeder IDE testen,
 ohne Alexa Developer Console oder AWS.
 """
 
+from pathlib import Path
+
 from engine import CrosswordGame
 
 
@@ -20,9 +22,23 @@ def select_difficulty() -> str:
     return raw
 
 
+def load_game() -> CrosswordGame:
+    custom = input("Eigene Fragen aus JSON laden? (j/n, Enter=n): ").strip().lower()
+    if custom == "j":
+        default = "custom_questions.json"
+        raw_path = input(f"Pfad zur JSON-Datei (Enter={default}): ").strip()
+        json_path = raw_path or default
+        file_path = Path(json_path)
+        if not file_path.exists():
+            print(f"Datei '{json_path}' nicht gefunden. Wir starten Standardfragen.")
+            return CrosswordGame.with_sample_puzzle(select_difficulty())
+        return CrosswordGame.from_json_file(file_path)
+
+    return CrosswordGame.with_sample_puzzle(select_difficulty())
+
+
 def main() -> None:
-    difficulty = select_difficulty()
-    game = CrosswordGame.with_sample_puzzle(difficulty)
+    game = load_game()
     print(f"\nAudio-Kreuzworträtsel gestartet (Schwierigkeit: {game.difficulty}).")
     print("Tippe 'hilfe' für Befehle.")
 
