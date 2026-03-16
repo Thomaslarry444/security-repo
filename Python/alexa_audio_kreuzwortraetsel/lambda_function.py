@@ -46,7 +46,17 @@ class AnswerIntentHandler(AbstractRequestHandler):
         session = handler_input.attributes_manager.session_attributes
         game: CrosswordGame = session[GAME_KEY]
         clue_id = session[CURRENT_CLUE_KEY]
-        answer = handler_input.request_envelope.request.intent.slots["answer"].value or ""
+        intent = handler_input.request_envelope.request.intent
+        slots = getattr(intent, "slots", None) or {}
+        answer_slot = slots.get("answer")
+        answer_value = (answer_slot.value if answer_slot and getattr(answer_slot, "value", None) else "").strip()
+
+        if not answer_value:
+            speech = "Ich habe deine Lösung nicht verstanden. Bitte wiederhole sie."
+            reprompt = "Bitte nenne deine Lösung."
+            return handler_input.response_builder.speak(speech).ask(reprompt).response
+
+        answer = answer_value
 
         if game.check_answer(clue_id, answer):
             if game.is_finished():
