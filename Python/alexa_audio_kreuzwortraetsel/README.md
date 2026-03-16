@@ -57,7 +57,7 @@ brew install python
 ### 2) In den Repo-Ordner wechseln
 
 ```bash
-cd /pfad/zu/deinem/repo/Uniteststore
+cd /pfad/zu/deinem/repo/<repo-name>
 ```
 
 ### 3) Virtuelle Umgebung anlegen
