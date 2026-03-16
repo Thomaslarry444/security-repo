@@ -1,0 +1,44 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "audio kreuzworträtsel",
+      "intents": [
+        {
+          "name": "AnswerIntent",
+          "slots": [
+            {
+              "name": "answer",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "die lösung ist {answer}",
+            "{answer}",
+            "ich sage {answer}"
+          ]
+        },
+        {
+          "name": "HintIntent",
+          "samples": [
+            "hinweis",
+            "gib mir einen tipp",
+            "hilfe zur lösung"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    }
+  }
+}
