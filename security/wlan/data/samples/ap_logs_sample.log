@@ -1,0 +1,5 @@
+2026-03-28T10:00:01Z hostapd: client aa:bb:cc:dd:ee:01 authenticated
+2026-03-28T10:01:13Z hostapd: deauth request from aa:bb:cc:dd:ee:02
+2026-03-28T10:01:20Z hostapd: failed authentication for aa:bb:cc:dd:ee:03
+2026-03-28T10:01:33Z wlan-monitor: unknown BSSID observed near SSID CorpWiFi
+2026-03-28T10:02:11Z hostapd: disassoc from aa:bb:cc:dd:ee:04
