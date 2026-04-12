@@ -1,0 +1,15 @@
+# Created by pytest automatically
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+
+# Generated reports
+security/wlan/reports/*.json
