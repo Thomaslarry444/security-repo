@@ -1,0 +1,55 @@
+{
+  "timestamp_utc": "2026-04-12T01:29:31.472349Z",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "compliance_percent": 100.0
+  },
+  "results": [
+    {
+      "rule": "wpa_mode_allowed",
+      "status": "PASS",
+      "actual": "WPA2-AES",
+      "expected": [
+        "WPA3",
+        "WPA2-AES"
+      ],
+      "remediation": "Use WPA3 or WPA2-AES only."
+    },
+    {
+      "rule": "wps_disabled",
+      "status": "PASS",
+      "actual": false,
+      "expected": [
+        false
+      ],
+      "remediation": "Disable WPS."
+    },
+    {
+      "rule": "firmware_up_to_date",
+      "status": "PASS",
+      "actual": true,
+      "expected": [
+        true
+      ],
+      "remediation": "Update AP firmware to latest stable release."
+    },
+    {
+      "rule": "passphrase_length",
+      "status": "PASS",
+      "actual": 35,
+      "expected": ">= 16",
+      "remediation": "Use a passphrase with at least 16 characters."
+    },
+    {
+      "rule": "default_admin_changed",
+      "status": "PASS",
+      "actual": true,
+      "expected": [
+        true
+      ],
+      "remediation": "Change default admin credentials."
+    }
+  ]
+}

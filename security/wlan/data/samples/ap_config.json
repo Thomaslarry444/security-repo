@@ -1,4 +1,10 @@
 {
+  "ap_name": "Office-AP-01",
+  "ap_bssid": "AA:BB:CC:DD:EE:FF",
+  "ap_model": "UniFi U6-Lite",
+  "ap_location": "Büro EG",
+  "checked_at": "2026-04-12T10:30:00Z",
+  "checked_by": "raspi-01",
   "wpa_mode": "WPA2-AES",
   "wps_enabled": false,
   "firmware_up_to_date": true,

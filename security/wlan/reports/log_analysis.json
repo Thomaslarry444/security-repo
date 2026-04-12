@@ -1,0 +1,35 @@
+{
+  "timestamp_utc": "2026-04-12T00:39:47.178265Z",
+  "counts": {
+    "deauth": 2,
+    "auth_fail": 1,
+    "rogue_indicator": 1
+  },
+  "alerts": [
+    "Rogue AP indicator occurrences: 1"
+  ],
+  "flagged_examples": {
+    "deauth": [
+      {
+        "line": 2,
+        "text": "2026-03-28T10:01:13Z hostapd: deauth request from aa:bb:cc:dd:ee:02"
+      },
+      {
+        "line": 5,
+        "text": "2026-03-28T10:02:11Z hostapd: disassoc from aa:bb:cc:dd:ee:04"
+      }
+    ],
+    "auth_fail": [
+      {
+        "line": 3,
+        "text": "2026-03-28T10:01:20Z hostapd: failed authentication for aa:bb:cc:dd:ee:03"
+      }
+    ],
+    "rogue_indicator": [
+      {
+        "line": 4,
+        "text": "2026-03-28T10:01:33Z wlan-monitor: unknown BSSID observed near SSID CorpWiFi"
+      }
+    ]
+  }
+}
