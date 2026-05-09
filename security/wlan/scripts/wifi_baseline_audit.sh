@@ -26,7 +26,7 @@ if [[ ! -f "$LOG_FILE" ]]; then
   exit 1
 fi
 
-python3 "$SCRIPTS_DIR/check_ap_config.py" \
+python3 "$SCRIPTS_DIR/ap_config_check.py" \
   --config "$CONFIG_FILE" \
   --output "$CFG_REPORT" >/dev/null
 
