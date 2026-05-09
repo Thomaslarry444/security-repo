@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 
 BASELINE_RULES = {
     "wpa_mode": ["WPA3", "WPA2-AES"],
@@ -91,7 +91,7 @@ def main():
     summary = summarize(results)
 
     report = {
-        "timestamp_utc": datetime.utcnow().isoformat() + "Z",
+        "timestamp_utc": datetime.now(timezone.utc).isoformat() + "Z",
         "summary": summary,
         "results": results
     }

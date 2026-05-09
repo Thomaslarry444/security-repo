@@ -3,7 +3,7 @@ import argparse
 import json
 import re
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timezone
 
 PATTERNS = {
     "deauth": re.compile(r"deauth|de-auth|disassoc", re.IGNORECASE),
@@ -44,7 +44,7 @@ def main():
         alerts.append(f"Rogue AP indicator occurrences: {counts['rogue_indicator']}")
 
     report = {
-        "timestamp_utc": datetime.utcnow().isoformat() + "Z",
+        "timestamp_utc": datetime.now(timezone.utc).isoformat() + "Z",
         "counts": dict(counts),
         "alerts": alerts,
         "flagged_examples": flagged,

@@ -35,7 +35,7 @@ python3 "$SCRIPTS_DIR/parse_wifi_logs.py" \
   --output "$LOG_REPORT" >/dev/null
 
 # NEUE ERWEITERUNG: Live-Scan des Heimrouters
-ROUTER_IP="10.10.87.1  # Anpassen an Ihre Router-IP
+ROUTER_IP="10.10.87.1"  # Anpassen an Ihre Router-IP
 WLAN_INTERFACE="wlan0"   # Anpassen an Ihr WLAN-Interface (prüfen mit 'iwconfig')
 SCAN_REPORT="$REPORTS_DIR/live_scan_${TS}.txt"
 
