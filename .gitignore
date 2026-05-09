@@ -1,4 +1,52 @@
+.venv/# Virtuelle Umgebungen
+venv/
+env/
+ENV/
 .venv/
+.env/
+
+# Pip-Cache und Installationsdateien
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.cache/
+.pip/
+
+# Paketierungs- und Build-Dateien
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+*.whl
+
+# IDE-spezifische Dateien (z.B. für VS Code)
+.vscode/settings.json  # Wenn Sie lokale Settings nicht teilen wollen
+*.swp
+*.swo
+
+# Temporäre Dateien
+*.tmp
+*.log
+.DS_Store  # Mac-spezifisch
+
+# Berichte und Logs (falls nicht gewünscht, basierend auf Ihrem Skript)
+reports/*.json
+reports/*.txt
+reports/*.md# Spezifische virtuelle Umgebungen oder Projektordner
+Python/alexa_audio_kreuzwortraetsel/
+Python/crossword_skills/
+
+# Zusätzliche VS Code-Dateien (falls gewünscht)
+.vscode/
+
+# Workspace-Dateien
+*.code-workspace
 .pytest_cache/
 __pycache__/
 *.pyc
